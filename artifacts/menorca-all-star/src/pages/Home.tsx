@@ -6,9 +6,9 @@ import { ChevronDown, Sparkles, Mic2, Gift, UtensilsCrossed } from 'lucide-react
 import { SiInstagram, SiX } from 'react-icons/si';
 
 import heroBg from '@/assets/hero-bg.png';
-import img3x3 from '@/assets/3x3.png';
-import imgTwoball from '@/assets/twoball.png';
-import imgSkills from '@/assets/skills.png';
+import img3x3 from '@/assets/3x3.webp';
+import imgTwoball from '@/assets/twoball.webp';
+import imgSkills from '@/assets/skills.webp';
 
 function PersonSilhouette({ glow = false }: { glow?: boolean }) {
   return (
@@ -72,37 +72,52 @@ export default function Home() {
 
       {/* 1. HERO */}
       <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+        {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
             src={heroBg}
             alt="Hero Background"
-            className="w-full h-full object-cover opacity-30 object-top"
+            className="w-full h-full object-cover opacity-50 object-top scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
           <ParticleCanvas />
         </div>
 
+        {/* Red glow orb behind title */}
+        <div className="absolute z-0 w-[120vw] h-[60vh] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(232,71,26,0.22) 0%, transparent 65%)' }}
+        />
+
         <motion.div
           style={{ opacity: heroOpacity, scale: heroScale }}
-          className="relative z-10 flex flex-col items-center text-center px-4"
+          className="relative z-10 flex flex-col items-center text-center w-full px-2"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 1.2, ease: 'easeOut' }}
+            initial={{ opacity: 0, y: 40, filter: 'blur(20px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full"
           >
-            <h1 className="text-[5.5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] font-black tracking-normal md:tracking-wide text-shadow-glow leading-[0.9] mb-4">
+            <h1
+              className="font-black text-shadow-glow leading-[0.88] mb-3 md:mb-6 w-full"
+              style={{ fontSize: 'clamp(4rem, 22vw, 12rem)', letterSpacing: '-0.01em' }}
+            >
               MENORCA<br />ALL STAR
             </h1>
-            <p className="text-xl md:text-3xl text-primary font-display tracking-[0.3em] font-bold mb-12">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="text-lg sm:text-2xl md:text-3xl text-primary font-display tracking-[0.35em] font-bold mb-10 md:mb-14"
+            >
               LA BATALLA DEFINITIVA
-            </p>
+            </motion.p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+            transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
           >
             <GlowButton href="/inscripcion" size="xl" data-testid="btn-inscripcion-hero">
               INSCRIPCIÓN
@@ -290,10 +305,6 @@ export default function Home() {
                 <SiX className="w-6 h-6" />
               </a>
             </div>
-
-            <p className="text-sm text-muted-foreground font-sans uppercase tracking-widest">
-              © {new Date().getFullYear()} Menorca All Star. Todos los derechos reservados.
-            </p>
           </motion.div>
         </div>
       </footer>
