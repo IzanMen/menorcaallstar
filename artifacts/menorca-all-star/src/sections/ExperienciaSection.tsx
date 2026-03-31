@@ -29,7 +29,7 @@ export function ExperienciaSection() {
           >
             <span
               aria-hidden="true"
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-[8rem] sm:text-[11rem] md:text-[14rem] font-black leading-none text-white/[0.025] group-hover:text-primary/[0.07] transition-colors duration-700 select-none pointer-events-none tracking-tighter pr-2"
+              className="absolute right-0 top-1/2 -translate-y-1/2 text-[8rem] sm:text-[11rem] md:text-[14rem] font-black leading-none text-white/[0.025] group-hover:text-primary/[0.07] transition-colors duration-700 select-none pointer-events-none tracking-tighter tabular-nums pr-2"
             >
               {item.num}
             </span>

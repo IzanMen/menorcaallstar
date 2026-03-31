@@ -50,7 +50,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-lg sm:text-2xl md:text-3xl text-primary font-display tracking-[0.35em] font-bold mb-8 md:mb-10"
           >
-            LA BATALLA DEFINITIVA
+            EL EVENTO MÁS ÉPICO
           </motion.p>
         </motion.div>
 
