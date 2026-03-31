@@ -3,7 +3,7 @@ import { GlowButton } from '@/components/GlowButton';
 import { SectionHeader } from '@/components/SectionHeader';
 import { ParticleCanvas } from '@/components/ParticleCanvas';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown, Sparkles, Mic2, Gift, UtensilsCrossed } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { SiInstagram, SiX } from 'react-icons/si';
 
 import heroBg from '@/assets/hero-bg.png';
@@ -116,10 +116,10 @@ export default function Home() {
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.05]);
 
   const experiencia = [
-    { icon: Sparkles, num: '01', title: 'ESPECTÁCULOS', desc: 'Actuaciones y shows en vivo durante todo el evento' },
-    { icon: Mic2, num: '02', title: 'SPEAKER', desc: 'Narración y animación profesional en directo' },
-    { icon: Gift, num: '03', title: 'SORTEOS', desc: 'Premios exclusivos y regalos para el público' },
-    { icon: UtensilsCrossed, num: '04', title: 'COMIDA Y BEBIDA', desc: 'Zona de restauración con las mejores opciones' },
+    { num: '01', title: 'ESPECTÁCULOS', desc: 'Actuaciones y shows en vivo durante todo el evento' },
+    { num: '02', title: 'SPEAKER', desc: 'Narración y animación profesional en directo' },
+    { num: '03', title: 'SORTEOS', desc: 'Premios exclusivos y regalos para el público' },
+    { num: '04', title: 'FOOD & DRINKS', desc: 'Zona de restauración con las mejores opciones' },
   ];
 
   return (
@@ -269,36 +269,34 @@ export default function Home() {
           <SectionHeader title="LA EXPERIENCIA" subtitle="Más que baloncesto" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4">
+        <div className="relative max-w-5xl mx-auto px-6">
           {experiencia.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: 'easeOut' }}
-              className="group relative flex items-center gap-8 py-10 border-b border-white/5 last:border-b-0 hover:border-primary/20 transition-colors duration-500"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.75, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative py-12 md:py-16 border-b border-white/[0.06] last:border-b-0 overflow-hidden cursor-default"
               data-testid={`item-experiencia-${i}`}
             >
-              <span className="hidden md:block text-[5rem] font-black leading-none text-white/[0.04] group-hover:text-primary/10 transition-colors duration-500 select-none min-w-[6rem] text-right">
+              <span
+                aria-hidden="true"
+                className="absolute right-0 top-1/2 -translate-y-1/2 text-[8rem] sm:text-[11rem] md:text-[14rem] font-black leading-none text-white/[0.025] group-hover:text-primary/[0.07] transition-colors duration-700 select-none pointer-events-none tracking-tighter pr-2"
+              >
                 {item.num}
               </span>
 
-              <div className="w-px h-16 bg-gradient-to-b from-transparent via-primary/40 to-transparent hidden md:block group-hover:via-primary/70 transition-colors duration-500" />
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                <item.icon className="w-6 h-6" />
-              </div>
-
-              <div className="flex-1">
-                <h4 className="text-2xl md:text-3xl font-black tracking-wider mb-1 group-hover:text-primary transition-colors duration-300">
+              <div className="relative z-10 pl-6 md:pl-8">
+                <p className="text-[0.65rem] text-primary font-bold tracking-[0.55em] mb-3 uppercase">{item.num}</p>
+                <h4 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-4 group-hover:text-primary transition-colors duration-400 uppercase">
                   {item.title}
                 </h4>
-                <p className="text-muted-foreground font-sans text-sm md:text-base">{item.desc}</p>
-              </div>
-
-              <div className="hidden lg:block text-primary/0 group-hover:text-primary/40 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                <ChevronDown className="w-6 h-6 -rotate-90" />
+                <p className="text-muted-foreground font-sans text-sm md:text-base max-w-lg leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -306,39 +304,70 @@ export default function Home() {
       </section>
 
       {/* 6. FINAL CTA + FOOTER */}
-      <footer className="relative pt-32 pb-12 overflow-hidden border-t border-primary/20 z-10">
-        <div className="absolute inset-0 opacity-15 pointer-events-none">
-          <div className="absolute inset-0 bg-[#080808]" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border-[3px] border-primary rounded-full shadow-[0_0_20px_rgba(232,71,26,0.4)]" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] border-[3px] border-primary rounded-full shadow-[0_0_10px_rgba(232,71,26,0.4)]" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-[300px] bg-primary shadow-[0_0_10px_rgba(232,71,26,0.4)]" />
-          <div className="absolute top-0 -left-4 w-[380px] h-[760px] border-[3px] border-primary rounded-r-full shadow-[0_0_15px_rgba(232,71,26,0.3)]" />
-          <div className="absolute top-0 -right-4 w-[380px] h-[760px] border-[3px] border-primary rounded-l-full shadow-[0_0_15px_rgba(232,71,26,0.3)]" />
+      <footer className="relative overflow-hidden z-10" style={{ background: '#050505' }}>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+          <div
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-[600px]"
+            style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(226,18,18,0.18) 0%, rgba(226,18,18,0.04) 45%, transparent 70%)' }}
+          />
+          <div
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-48"
+            style={{ background: 'radial-gradient(ellipse at 50% 100%, rgba(226,18,18,0.08) 0%, transparent 70%)' }}
+          />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 flex flex-col items-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-6 pt-28 pb-12 flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full"
           >
-            <h2 className="text-5xl md:text-7xl font-black mb-8 text-shadow-glow tracking-wide">
-              MENORCA ALL STAR
+            <p className="text-[0.6rem] text-primary/50 font-bold tracking-[0.7em] uppercase mb-6">
+              Menorca · Verano 2025
+            </p>
+
+            <h2
+              className="font-black uppercase leading-[0.88] tracking-tight mb-4 text-shadow-glow"
+              style={{ fontSize: 'clamp(3.5rem, 18vw, 9rem)' }}
+            >
+              MENORCA<br />ALL STAR
             </h2>
-            <GlowButton href="/inscripcion" size="lg" className="mb-24" data-testid="btn-inscripcion-footer">
+
+            <p className="text-primary font-display font-bold tracking-[0.35em] uppercase text-sm md:text-base mb-12">
+              La batalla definitiva
+            </p>
+
+            <GlowButton href="/inscripcion" size="xl" className="mb-16" data-testid="btn-inscripcion-footer">
               INSCRIBIRME
             </GlowButton>
 
-            <div className="flex items-center justify-center gap-6 mb-8">
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-10" />
+
+            <div className="flex items-center justify-center gap-5 mb-10">
               <a
                 href="#"
-                className="p-3 rounded-full glass-panel text-white hover:text-primary hover:shadow-[0_0_15px_rgba(232,71,26,0.4)] transition-all"
+                className="group flex items-center gap-2.5 px-5 py-3 rounded-full border border-white/10 text-white/50 hover:border-primary/50 hover:text-white hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"
                 data-testid="link-instagram"
               >
-                <SiInstagram className="w-6 h-6" />
+                <SiInstagram className="w-5 h-5 group-hover:text-primary transition-colors" />
+                <span className="text-xs font-bold tracking-widest uppercase">Instagram</span>
+              </a>
+              <a
+                href="#"
+                className="group flex items-center gap-2.5 px-5 py-3 rounded-full border border-white/10 text-white/50 hover:border-primary/50 hover:text-white hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"
+                data-testid="link-twitter"
+              >
+                <SiX className="w-5 h-5 group-hover:text-primary transition-colors" />
+                <span className="text-xs font-bold tracking-widest uppercase">Twitter</span>
               </a>
             </div>
+
+            <p className="text-[0.6rem] text-white/15 tracking-[0.4em] uppercase">
+              © 2025 Menorca All Star — Todos los derechos reservados
+            </p>
           </motion.div>
         </div>
       </footer>
