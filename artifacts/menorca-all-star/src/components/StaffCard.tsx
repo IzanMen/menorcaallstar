@@ -41,12 +41,6 @@ export function StaffCard({ delay = 0, role, count, compact = false, multiple = 
         style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.2) 42%, transparent 62%)' }}
       />
 
-      <div className="absolute top-3 right-3 z-20">
-        <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-black/70 border border-primary/30 text-primary font-black text-sm backdrop-blur-sm">
-          ×{count}
-        </span>
-      </div>
-
       <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-5 text-center">
         <h4 className="text-xl font-black tracking-[0.14em] text-white/85 group-hover:text-white transition-colors duration-300 uppercase mb-2">
           {role}
