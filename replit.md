@@ -91,6 +91,20 @@ Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used b
 
 Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
 
+### `artifacts/menorca-all-star` (`@workspace/menorca-all-star`)
+
+Dark-themed basketball event landing page for "Menorca All Star". Spanish language, frontend-only React/Vite + Tailwind + Framer Motion. No backend.
+
+- **Stack**: React 19, Vite, Tailwind CSS v4, Framer Motion, Lenis (smooth scroll), Wouter (routing)
+- **Routes**: `/` (Home) and `/inscripcion` (coming soon page)
+- **Structure**:
+  - `src/pages/Home.tsx` — slim orchestrator (~15 lines), just imports sections
+  - `src/sections/` — one file per page section: `HeroSection`, `PruebasSection`, `ElEquipoSection`, `ExperienciaSection`, `FooterSection`
+  - `src/components/` — reusable: `GlowButton`, `SectionHeader`, `ParticleCanvas`, `RealisticSilhouette`, `StaffCard`
+  - `src/assets/` — `hero-bg.png`, `3x3.webp`, `twoball.webp`, `skills.webp`
+- **Design tokens**: Primary color `HSL 0 85% 48%` (true red `#E21212`), background near-black `#050505`, font Barlow Condensed (headings) + Inter (body)
+- **Performance**: No shadcn/ui components, no React Query, no unnecessary deps — lean bundle
+
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
