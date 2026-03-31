@@ -11,7 +11,7 @@ import img3x3 from '@/assets/3x3.webp';
 import imgTwoball from '@/assets/twoball.webp';
 import imgSkills from '@/assets/skills.webp';
 
-function RealisticSilhouette() {
+function RealisticSilhouette({ svgClass = "absolute inset-0 w-full h-full" }: { svgClass?: string }) {
   const uid = useId().replace(/:/g, '');
   const SILHOUETTE = "M 200 18 C 255 18, 288 58, 288 108 C 288 148, 272 180, 248 196 C 244 202, 238 210, 234 220 C 258 232, 310 252, 358 282 C 390 302, 410 340, 410 560 L -10 560 C -10 340, 10 302, 42 282 C 90 252, 142 232, 166 220 C 162 210, 156 202, 152 196 C 128 180, 112 148, 112 108 C 112 58, 145 18, 200 18 Z";
 
@@ -19,7 +19,7 @@ function RealisticSilhouette() {
     <svg
       viewBox="0 0 400 560"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute inset-0 w-full h-full"
+      className={svgClass}
       preserveAspectRatio="xMidYMax meet"
     >
       <defs>
@@ -60,9 +60,10 @@ interface StaffCardProps {
   role: string;
   count: number;
   compact?: boolean;
+  multiple?: boolean;
 }
 
-function StaffCard({ delay = 0, role, count, compact = false }: StaffCardProps) {
+function StaffCard({ delay = 0, role, count, compact = false, multiple = false }: StaffCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -73,10 +74,24 @@ function StaffCard({ delay = 0, role, count, compact = false }: StaffCardProps) 
       className={`group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/25 hover:shadow-[0_0_40px_rgba(226,18,18,0.15)] transition-all duration-500 cursor-default ${compact ? 'aspect-[4/3]' : 'aspect-[3/4]'}`}
       style={{ background: 'linear-gradient(160deg, #111111 0%, #080808 100%)' }}
     >
-      <RealisticSilhouette />
+      {multiple ? (
+        <div className="absolute inset-0">
+          <div className="absolute inset-y-0 opacity-50" style={{ left: 0, width: '52%' }}>
+            <RealisticSilhouette svgClass="w-full h-full" />
+          </div>
+          <div className="absolute inset-y-0 z-10" style={{ left: '24%', width: '52%' }}>
+            <RealisticSilhouette svgClass="w-full h-full" />
+          </div>
+          <div className="absolute inset-y-0 opacity-50" style={{ right: 0, width: '52%' }}>
+            <RealisticSilhouette svgClass="w-full h-full" />
+          </div>
+        </div>
+      ) : (
+        <RealisticSilhouette />
+      )}
 
       <div className="absolute inset-0 pointer-events-none z-10"
-        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.25) 38%, transparent 60%)' }}
+        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.2) 42%, transparent 62%)' }}
       />
 
       <div className="absolute top-3 right-3 z-20">
@@ -85,9 +100,9 @@ function StaffCard({ delay = 0, role, count, compact = false }: StaffCardProps) 
         </span>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 text-center">
-        <p className="text-[0.58rem] text-white/22 uppercase tracking-[0.28em] mb-1">Identidad clasificada</p>
-        <h4 className="text-sm font-black tracking-[0.18em] text-white/75 group-hover:text-white transition-colors duration-300 uppercase">{role}</h4>
+      <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-5 text-center">
+        <h4 className="text-xl font-black tracking-[0.14em] text-white/85 group-hover:text-white transition-colors duration-300 uppercase mb-2">{role}</h4>
+        <p className="text-xs font-bold text-primary/60 uppercase tracking-[0.3em]">Próximamente</p>
       </div>
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_20%,rgba(226,18,18,0.10),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
@@ -111,7 +126,7 @@ export default function Home() {
     <div className="bg-background min-h-screen text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-white">
 
       {/* 1. HERO */}
-      <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
@@ -148,9 +163,9 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-lg sm:text-2xl md:text-3xl text-primary font-display tracking-[0.35em] font-bold mb-10 md:mb-14"
+              className="text-lg sm:text-2xl md:text-3xl text-primary font-display tracking-[0.35em] font-bold mb-8 md:mb-10"
             >
-              EL MAYOR EVENTO HECHO NUNCA
+              LA BATALLA DEFINITIVA
             </motion.p>
           </motion.div>
 
@@ -159,8 +174,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
           >
-            <GlowButton href="/inscripcion" size="xl" data-testid="btn-inscripcion-hero">
-              INSCRIPCIÓN
+            <GlowButton href="/inscripcion" size="sm" data-testid="btn-inscripcion-hero">
+              Inscripción
             </GlowButton>
           </motion.div>
         </motion.div>
@@ -236,8 +251,8 @@ export default function Home() {
           </motion.p>
 
           <div className="grid grid-cols-2 gap-4 mb-4">
-            <StaffCard role="Árbitros" count={3} delay={0} />
-            <StaffCard role="Jueces" count={3} delay={0.1} />
+            <StaffCard role="Árbitros" count={3} delay={0} multiple />
+            <StaffCard role="Jueces" count={3} delay={0.1} multiple />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <StaffCard role="DJ" count={1} delay={0.2} compact />
