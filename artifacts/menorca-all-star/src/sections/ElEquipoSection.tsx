@@ -7,7 +7,7 @@ export function ElEquipoSection() {
     <section className="relative py-24 px-4 z-10 bg-black/40">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(226,18,18,0.04),transparent_70%)]" />
       <div className="max-w-4xl mx-auto">
-        <SectionHeader title="EL EQUIPO" subtitle="Los arquitectos del show" />
+        <SectionHeader title="EL EQUIPO" subtitle="Los arquitectos del evento" />
 
         <motion.p
           initial={{ opacity: 0 }}

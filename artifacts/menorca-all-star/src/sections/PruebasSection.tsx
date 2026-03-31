@@ -14,7 +14,7 @@ const PRUEBAS = [
 export function PruebasSection() {
   return (
     <section className="relative py-32 px-4 max-w-7xl mx-auto z-10">
-      <SectionHeader title="LAS PRUEBAS" subtitle="Demuestra tu nivel" />
+      <SectionHeader title="LAS PRUEBAS" subtitle="Categorias según tu edad" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         {PRUEBAS.map((prueba, i) => (

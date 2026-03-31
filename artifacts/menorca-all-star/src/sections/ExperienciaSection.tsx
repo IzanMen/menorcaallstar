@@ -3,9 +3,9 @@ import { SectionHeader } from '@/components/SectionHeader';
 
 const EXPERIENCIA = [
   { num: '01', title: 'ESPECTÁCULOS', desc: 'Actuaciones y shows en vivo durante todo el evento' },
-  { num: '02', title: 'SPEAKER', desc: 'Narración y animación profesional en directo' },
-  { num: '03', title: 'SORTEOS', desc: 'Premios exclusivos y regalos para el público' },
-  { num: '04', title: 'FOOD & DRINKS', desc: 'Zona de restauración con las mejores opciones' },
+  { num: '02', title: 'SPEAKER', desc: 'Narración y animación en directo' },
+  { num: '03', title: 'SORTEOS', desc: 'Premios y regalos para el público' },
+  { num: '04', title: 'FOOD & DRINKS', desc: 'Barra con comida y bebidas para el público' },
 ];
 
 export function ExperienciaSection() {

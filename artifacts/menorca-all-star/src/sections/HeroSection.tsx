@@ -59,7 +59,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
         >
-          <GlowButton href="/inscripcion" size="sm" data-testid="btn-inscripcion-hero">
+          <GlowButton href="/inscripcion" size="sm" className="md:px-10 md:py-3 md:text-xl" data-testid="btn-inscripcion-hero">
             Inscripción
           </GlowButton>
         </motion.div>
