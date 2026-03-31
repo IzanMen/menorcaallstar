@@ -57,27 +57,40 @@ function RealisticSilhouette() {
 
 interface StaffCardProps {
   delay?: number;
+  role: string;
+  count: number;
+  compact?: boolean;
 }
 
-function StaffCard({ delay = 0 }: StaffCardProps) {
+function StaffCard({ delay = 0, role, count, compact = false }: StaffCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      whileHover={{ scale: 1.03 }}
-      className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/30 hover:shadow-[0_0_30px_rgba(232,71,26,0.18)] transition-all duration-500 cursor-default aspect-[3/4]"
-      style={{ background: 'linear-gradient(160deg, #131313 0%, #0a0a0a 100%)' }}
+      transition={{ duration: 0.6, delay }}
+      whileHover={{ scale: 1.02 }}
+      className={`group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/25 hover:shadow-[0_0_40px_rgba(226,18,18,0.15)] transition-all duration-500 cursor-default ${compact ? 'aspect-[4/3]' : 'aspect-[3/4]'}`}
+      style={{ background: 'linear-gradient(160deg, #111111 0%, #080808 100%)' }}
     >
       <RealisticSilhouette />
 
-      <div className="absolute inset-x-0 bottom-0 z-10 pt-16 pb-5 px-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent text-center">
-        <span className="block text-[2rem] font-black leading-none text-primary/35 group-hover:text-primary/65 transition-colors duration-400 mb-1">???</span>
-        <p className="text-[0.65rem] text-white/30 uppercase tracking-[0.2em]">Próximamente</p>
+      <div className="absolute inset-0 pointer-events-none z-10"
+        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.25) 38%, transparent 60%)' }}
+      />
+
+      <div className="absolute top-3 right-3 z-20">
+        <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-black/70 border border-primary/30 text-primary font-black text-sm backdrop-blur-sm">
+          ×{count}
+        </span>
       </div>
 
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_10%,rgba(232,71,26,0.10),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+      <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 text-center">
+        <p className="text-[0.58rem] text-white/22 uppercase tracking-[0.28em] mb-1">Identidad clasificada</p>
+        <h4 className="text-sm font-black tracking-[0.18em] text-white/75 group-hover:text-white transition-colors duration-300 uppercase">{role}</h4>
+      </div>
+
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_20%,rgba(226,18,18,0.10),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
     </motion.div>
   );
 }
@@ -86,13 +99,6 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.05]);
-
-  const staffGroups = [
-    { title: 'ÁRBITROS', count: 3 },
-    { title: 'JUECES', count: 3 },
-    { title: 'DJ', count: 1 },
-    { title: 'SPEAKER', count: 1 },
-  ];
 
   const experiencia = [
     { icon: Sparkles, num: '01', title: 'ESPECTÁCULOS', desc: 'Actuaciones y shows en vivo durante todo el evento' },
@@ -144,7 +150,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="text-lg sm:text-2xl md:text-3xl text-primary font-display tracking-[0.35em] font-bold mb-10 md:mb-14"
             >
-              LA BATALLA DEFINITIVA
+              EL MAYOR EVENTO HECHO NUNCA
             </motion.p>
           </motion.div>
 
@@ -215,41 +221,27 @@ export default function Home() {
       </section>
 
       {/* 3. EL EQUIPO */}
-      <section className="relative py-32 px-4 z-10 bg-black/40">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,71,26,0.04),transparent_70%)]" />
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-24 px-4 z-10 bg-black/40">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(226,18,18,0.04),transparent_70%)]" />
+        <div className="max-w-4xl mx-auto">
           <SectionHeader title="EL EQUIPO" subtitle="Los arquitectos del show" />
 
-          <div className="space-y-16">
-            {staffGroups.map((group, gi) => (
-              <motion.div
-                key={group.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: gi * 0.1 }}
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/40" />
-                  <h3 className="text-lg md:text-xl font-bold tracking-[0.3em] text-primary uppercase">
-                    {group.title}
-                  </h3>
-                  <span className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/40" />
-                </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center text-xs text-white/25 uppercase tracking-[0.4em] -mt-6 mb-12"
+          >
+            Identidades por revelar
+          </motion.p>
 
-                <div
-                  className={`grid gap-4 ${
-                    group.count === 1
-                      ? 'grid-cols-1 max-w-xs mx-auto'
-                      : 'grid-cols-3 max-w-2xl mx-auto'
-                  }`}
-                >
-                  {Array.from({ length: group.count }).map((_, i) => (
-                    <StaffCard key={i} delay={gi * 0.1 + i * 0.08} />
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <StaffCard role="Árbitros" count={3} delay={0} />
+            <StaffCard role="Jueces" count={3} delay={0.1} />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <StaffCard role="DJ" count={1} delay={0.2} compact />
+            <StaffCard role="Speaker" count={1} delay={0.25} compact />
           </div>
 
         </div>
@@ -257,7 +249,7 @@ export default function Home() {
 
       {/* 4. EXPERIENCIA */}
       <section className="relative py-32 z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(232,71,26,0.04),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(226,18,18,0.04),transparent)]" />
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader title="LA EXPERIENCIA" subtitle="Más que baloncesto" />
         </div>
@@ -330,13 +322,6 @@ export default function Home() {
                 data-testid="link-instagram"
               >
                 <SiInstagram className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
-                className="p-3 rounded-full glass-panel text-white hover:text-primary hover:shadow-[0_0_15px_rgba(232,71,26,0.4)] transition-all"
-                data-testid="link-twitter"
-              >
-                <SiX className="w-6 h-6" />
               </a>
             </div>
           </motion.div>
