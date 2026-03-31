@@ -24,8 +24,8 @@ export function HeroSection() {
       </div>
 
       <div
-        className="absolute z-0 w-[120vw] h-[60vh] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(232,71,26,0.22) 0%, transparent 65%)' }}
+        className="absolute z-0 inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 42%, rgba(232,71,26,0.20) 0%, rgba(232,71,26,0.04) 60%, transparent 100%)' }}
       />
 
       <motion.div
