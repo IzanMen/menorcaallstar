@@ -91,7 +91,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
           >
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-wide text-shadow-glow leading-none mb-4">
+            <h1 className="text-[5.5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] font-black tracking-normal md:tracking-wide text-shadow-glow leading-[0.9] mb-4">
               MENORCA<br />ALL STAR
             </h1>
             <p className="text-xl md:text-3xl text-primary font-display tracking-[0.3em] font-bold mb-12">
@@ -203,17 +203,6 @@ export default function Home() {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-16 text-center"
-          >
-            <GlowButton href="/inscripcion" data-testid="btn-inscripcion-equipo">
-              Inscribirme
-            </GlowButton>
-          </motion.div>
         </div>
       </section>
 
@@ -258,27 +247,6 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
-      </section>
-
-      {/* 5. VISUAL INTERLUDE */}
-      <section className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden bg-black z-10 border-y border-white/5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(232,71,26,0.12),transparent_60%)]" />
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary blur-[120px] rounded-full mix-blend-screen animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary blur-[100px] rounded-full mix-blend-screen animate-pulse" style={{ animationDelay: '1.2s' }} />
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="relative z-10"
-        >
-          <GlowButton href="/inscripcion" size="xl" data-testid="btn-inscripcion-interlude">
-            Asegura tu plaza
-          </GlowButton>
-        </motion.div>
       </section>
 
       {/* 6. FINAL CTA + FOOTER */}
