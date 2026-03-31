@@ -1,0 +1,266 @@
+Actúa como un desarrollador senior experto en frontend (React + Tailwind + animaciones avanzadas) y como un director creativo especializado en experiencias web de alto impacto visual.
+
+Quiero que desarrolles una web para un evento llamado "Menorca All Star".
+
+OBJETIVO PRINCIPAL:
+Generar HYPE a través del diseño visual.
+No usar copy exagerado ni frases grandilocuentes.
+La percepción de evento grande y épico debe venir del diseño, animaciones y experiencia, NO del texto.
+
+INSPIRACIÓN:
+- Estilo visual tipo "La Velada del Año"
+- Cinemático, oscuro, futurista
+- Sensación de producción de alto nivel
+
+ESTILO VISUAL:
+- Fondo negro profundo con efectos glow y partículas
+- Colores neón (azul eléctrico, violeta, rojo)
+- Tipografía moderna estilo deportivo (limpia, no sobrecargada)
+- Animaciones fluidas y elegantes
+- Scroll con transiciones suaves
+- Efectos visuales tipo:
+  - glow dinámico
+  - blur
+  - glassmorphism
+- Imágenes de fondo (opacidad baja):
+  - canchas de baloncesto
+  - balones
+  - jugadores en acción
+
+EXPERIENCIA GENERAL:
+- Debe sentirse como un “trailer interactivo”
+- Mucho peso en lo visual, poco texto
+- Ritmo: alternar momentos cargados visualmente con espacios minimalistas
+- Generar curiosidad sin explicarlo todo
+
+IMPORTANTE SOBRE BOTONES:
+- Debe haber múltiples botones de inscripción a lo largo de la landing
+- Todos llevan a /inscripcion
+- Deben integrarse de forma natural (no parecer spam)
+- Diseño consistente pero con pequeñas variaciones (hover, glow, tamaño)
+
+ESTRUCTURA:
+
+1. HERO SECTION (pantalla completa)
+- Fondo animado (partículas o vídeo oscuro)
+- Título grande:
+  "MENORCA ALL STAR"
+- Subtítulo breve (neutral, no exagerado)
+- Animación sutil en textos
+- Botón principal:
+  "INSCRIPCIÓN"
+  → redirige a /inscripcion
+- Indicador de scroll (flecha animada)
+
+2. SECCIÓN: PRUEBAS
+3 bloques grandes:
+- 3x3
+- TwoBall
+- Skills
+
+Cada bloque:
+- Imagen o fondo dinámico
+- Hover con glow + ligera escala
+- Microanimaciones
+
+- Botón integrado debajo:
+  "Participar"
+  → /inscripcion
+
+3. SECCIÓN: REVELACIONES (STAFF & EXPERIENCIA)
+
+OBJETIVO:
+Generar misterio y anticipación sobre las personas clave del evento (no jugadores).
+Debe transmitir que hay producción detrás (árbitros, jueces, DJ, etc.), sin revelar identidades.
+
+DISEÑO:
+- Grid visual de 5–6 cards (responsive)
+- Cada card representa un rol del evento:
+
+  - Árbitros
+  - Jueces
+  - DJ
+  - Speaker
+  - Grupo musical (o música en vivo)
+  - (Opcional: añadir más en el futuro fácilmente)
+
+CONTENIDO DE CADA CARD:
+- Imagen: silueta humana oscura (estilo incógnito)
+  - Fondo con glow suave (neón)
+  - Posible efecto de humo o partículas
+- Título (rol, no nombre):
+  Ejemplo:
+    "ÁRBITROS"
+    "JUECES"
+    "DJ"
+    "SPEAKER"
+    "LIVE MUSIC"
+
+- Nombre:
+  "???"
+
+- Texto pequeño:
+  "Próximamente"
+
+INTERACCIONES:
+- Hover:
+  - Glow más intenso
+  - Ligero zoom (scale 1.03–1.05)
+  - Efecto blur dinámico en el fondo
+- Opcional:
+  - Efecto glitch muy sutil al pasar el cursor
+- Entrada en pantalla:
+  - Animación fade + translateY + ligera escala
+
+EFECTO AVANZADO (IMPORTANTE):
+- Al hacer hover, la silueta puede iluminarse ligeramente (sin revelar identidad)
+- Añadir una ligera animación interna (como movimiento de luz)
+
+ESTRUCTURA VISUAL:
+- Grid centrado
+- Espaciado amplio (no saturado)
+- Fondo oscuro con detalles de partículas o líneas sutiles
+
+CTA DE LA SECCIÓN:
+- Botón debajo del grid:
+  "Inscribirme"
+  → /inscripcion
+- Estilo:
+  glow + hover dinámico
+
+NOTA IMPORTANTE:
+Esta sección debe transmitir:
+- Organización seria
+- Producción cuidada
+- Sensación de evento real (no amateur)
+
+5. SECCIÓN: EXPERIENCIA
+- Grid visual (sin mucho texto):
+  - Música
+  - Speaker
+  - Sorteos
+  - Comida
+- Iconos modernos + animaciones hover
+
+6. SECCIÓN VISUAL INTERMEDIA (IMPORTANTE)
+- Sección sin apenas texto
+- Solo:
+  - vídeo / fondo animado
+  - overlays de luz
+- Botón flotante:
+  "Inscripción"
+  → /inscripcion
+
+7. SECCIÓN FINAL
+- Diseño limpio, minimalista
+- Solo título:
+  "Menorca All Star"
+
+- Botón final grande:
+  "Inscribirme"
+  → /inscripcion
+
+FOOTER:
+
+OBJETIVO:
+El footer debe parecer visualmente una pista de baloncesto integrada en el diseño, no un bloque estándar.
+
+DISEÑO GENERAL:
+- El footer NO debe ser rectangular simple
+- Parte superior con forma irregular (wave o diagonal) que haga transición desde la sección anterior
+- Sensación de que "entras" en una cancha de baloncesto
+
+FONDO:
+- Textura de pista de baloncesto (madera o superficie oscura estilizada)
+- Líneas reales de una cancha:
+  - línea de triple
+  - zona (paint)
+  - círculo central (opcional)
+- Las líneas deben ser sutiles, con color neón suave (no blanco puro)
+- Integrar glow muy ligero en las líneas
+
+ESTILO:
+- Mantener coherencia con el resto de la web:
+  - tonos oscuros
+  - detalles neón
+- Aplicar ligero blur o overlay oscuro para que no distraiga demasiado
+
+CONTENIDO:
+- Nombre del evento centrado:
+  "Menorca All Star"
+
+- Redes sociales:
+  - Iconos (Instagram, etc.)
+  - Estilo minimalista
+  - Hover con glow
+
+EFECTOS:
+- Animación muy sutil en las líneas (por ejemplo, glow pulsante lento)
+- Posible efecto de luz recorriendo una línea de la cancha
+
+RESPONSIVE:
+- En móvil simplificar:
+  - mantener textura
+  - reducir líneas visibles
+  - mantener legibilidad
+
+NOTA IMPORTANTE:
+Debe sentirse como una extensión del universo visual del evento, no como un footer típico.
+
+---
+
+PÁGINA /inscripcion:
+
+OBJETIVO:
+Transmitir que aún no está disponible, pero manteniendo el estilo visual.
+
+DISEÑO:
+- Misma estética que la landing
+- Aplicar efecto visual de "deshabilitado":
+  - overlay oscuro
+  - blur ligero
+  - menor contraste
+- Sensación de “bloqueado temporalmente”
+
+CONTENIDO:
+- Texto central:
+  "Inscripciones próximamente"
+- Subtexto breve:
+  "Disponible en breve"
+
+- Botón deshabilitado (muy importante):
+  "Inscribirme"
+  (visual disabled, no clickable)
+
+- Botón secundario:
+  "Volver"
+  → home
+
+ANIMACIONES:
+- Glow suave en elementos
+- Efecto pulse muy ligero en texto
+
+---
+
+REQUISITOS TÉCNICOS:
+- React
+- Tailwind CSS
+- Framer Motion
+- Componentes reutilizables
+- Código limpio y escalable
+
+---
+
+EXTRA (CLAVE):
+- Cuidar MUCHO:
+  - spacing
+  - jerarquía visual
+  - timing de animaciones
+
+- Evitar:
+  - exceso de texto
+  - saturación de efectos
+  - sensación amateur
+
+RESULTADO FINAL:
+Debe parecer una web de lanzamiento de evento profesional, donde el impacto visual genera interés sin necesidad de explicaciones.

@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "nn_YtvBtIIjnlHhM55ZAQ"
+uri = "file://artifacts/menorca-all-star/src/assets/hero-bg.png"
+type = "image"
+title = "atmospheric basketball court"
+
+[[generated]]
+id = "v-mPswOYsaFCTGHjZTWb0"
+uri = "file://artifacts/menorca-all-star/src/assets/3x3.png"
+type = "image"
+title = "3x3 dunk"
+
+[[generated]]
+id = "SdjxhvR-GriYd5Ew5K27j"
+uri = "file://artifacts/menorca-all-star/src/assets/twoball.png"
+type = "image"
+title = "two ball dribbling"
+
+[[generated]]
+id = "VD6bnPfX6rLEO34fpsv3M"
+uri = "file://artifacts/menorca-all-star/src/assets/skills.png"
+type = "image"
+title = "skills challenge"
