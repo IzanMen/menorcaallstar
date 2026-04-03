@@ -20,7 +20,7 @@ export function ElEquipoSection() {
 
         <div className="grid grid-cols-2 gap-4 mb-4">
           <StaffCard role="Árbitros" count={3} delay={0} multiple />
-          <StaffCard role="Jueces" count={3} delay={0.1} multiple />
+          <StaffCard role="Mesa" count={3} delay={0.1} multiple />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <StaffCard role="DJ" count={1} delay={0.2} compact />

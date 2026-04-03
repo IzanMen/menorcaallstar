@@ -7,7 +7,7 @@ import imgSkills from '@/assets/skills.webp';
 
 const PRUEBAS = [
   { title: '3X3', img: img3x3, color: 'primary' as const },
-  { title: 'TWO BALL', img: imgTwoball, color: 'secondary' as const },
+  { title: 'TWOBALL', img: imgTwoball, color: 'secondary' as const },
   { title: 'SKILLS CHALLENGE', img: imgSkills, color: 'accent' as const },
 ];
 
