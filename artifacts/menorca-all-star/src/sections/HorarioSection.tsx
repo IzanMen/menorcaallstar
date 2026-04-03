@@ -18,6 +18,11 @@ interface ScheduleBlock {
   categories?: Category[];
 }
 
+interface Finale {
+  time: string;
+  name: string;
+}
+
 const MORNING: ScheduleBlock[] = [
   { time: '09:00', title: 'APERTURA DE PUERTAS', type: 'compact' },
   { time: '09:45', title: 'DISCURSO INICIAL', type: 'compact' },
@@ -34,7 +39,13 @@ const MORNING: ScheduleBlock[] = [
   {
     time: '12:45', endTime: '14:15',
     title: 'CONCURSO DE HABILIDADES', type: 'featured', image: imgSkills,
+    categories: [
+      { time: '12:45 – 13:08', name: 'Junior + Adultos' },
+      { time: '13:08 – 13:31', name: 'Infantil + Cadete' },
+      { time: '13:31 – 13:54', name: 'Mini' },
+    ],
   },
+  { time: '14:00', endTime: '14:15', title: 'FINALES DEL CONCURSO', type: 'compact' },
   { time: '14:15', endTime: '14:30', title: 'ENTREGA DE PREMIOS', type: 'compact' },
   { time: '14:30', endTime: '15:30', title: 'DESCANSO', type: 'break' },
 ];
@@ -54,7 +65,13 @@ const AFTERNOON: ScheduleBlock[] = [
   {
     time: '18:00', endTime: '19:30',
     title: 'CONCURSO DE TIRO', type: 'featured', image: imgTwoball,
+    categories: [
+      { time: '18:00 – 18:23', name: 'Junior + Adultos' },
+      { time: '18:23 – 18:46', name: 'Infantil + Cadete' },
+      { time: '18:46 – 19:09', name: 'Mini' },
+    ],
   },
+  { time: '19:10', endTime: '19:25', title: 'FINALES DEL CONCURSO', type: 'compact' },
   { time: '19:30', endTime: '20:00', title: 'PREMIOS TIRO', type: 'compact' },
   {
     time: '20:00', endTime: '22:00',
@@ -188,6 +205,52 @@ function FeaturedEvent({ block, index }: { block: ScheduleBlock; index: number }
                     </span>
                   </motion.div>
                 ))}
+              </div>
+            )}
+            {block.title.includes('CONCURSO DE HABILIDADES') && (
+              <div className="mt-5">
+                <div className="flex items-center gap-3">
+                  <span className="text-[0.65rem] text-primary/60 font-bold tracking-[0.4em] uppercase">Finales</span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent" />
+                </div>
+                <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {[
+                    { time: '14:00 – 14:05', name: 'Junior + Adultos' },
+                    { time: '14:05 – 14:10', name: 'Infantil + Cadete' },
+                    { time: '14:10 – 14:15', name: 'Mini' },
+                  ].map((finale: { time: string; name: string }) => (
+                    <div
+                      key={finale.name}
+                      className="rounded-xl border border-primary/10 bg-black/30 px-3 py-3 text-left hover:border-primary/25 transition-colors duration-300"
+                    >
+                      <div className="text-[0.65rem] text-white/35 font-black tracking-tight tabular-nums">{finale.time}</div>
+                      <div className="text-sm font-bold text-primary/85 uppercase tracking-wider mt-1">{finale.name}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {block.title.includes('CONCURSO DE TIRO') && (
+              <div className="mt-5">
+                <div className="flex items-center gap-3">
+                  <span className="text-[0.65rem] text-primary/60 font-bold tracking-[0.4em] uppercase">Finales</span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent" />
+                </div>
+                <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {[
+                    { time: '19:10 – 19:15', name: 'Junior + Adultos' },
+                    { time: '19:15 – 19:20', name: 'Infantil + Cadete' },
+                    { time: '19:20 – 19:25', name: 'Mini' },
+                  ].map((finale: { time: string; name: string }) => (
+                    <div
+                      key={finale.name}
+                      className="rounded-xl border border-primary/10 bg-black/30 px-3 py-3 text-left hover:border-primary/25 transition-colors duration-300"
+                    >
+                      <div className="text-[0.65rem] text-white/35 font-black tracking-tight tabular-nums">{finale.time}</div>
+                      <div className="text-sm font-bold text-primary/85 uppercase tracking-wider mt-1">{finale.name}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
