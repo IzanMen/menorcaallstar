@@ -45,7 +45,6 @@ const MORNING: ScheduleBlock[] = [
       { time: '13:31 – 13:54', name: 'Mini' },
     ],
   },
-  { time: '14:00', endTime: '14:15', title: 'FINALES DEL CONCURSO', type: 'compact' },
   { time: '14:15', endTime: '14:30', title: 'ENTREGA DE PREMIOS', type: 'compact' },
   { time: '14:30', endTime: '15:30', title: 'DESCANSO', type: 'break' },
 ];
@@ -71,7 +70,6 @@ const AFTERNOON: ScheduleBlock[] = [
       { time: '18:46 – 19:09', name: 'Mini' },
     ],
   },
-  { time: '19:10', endTime: '19:25', title: 'FINALES DEL CONCURSO', type: 'compact' },
   { time: '19:30', endTime: '20:00', title: 'PREMIOS TIRO', type: 'compact' },
   {
     time: '20:00', endTime: '22:00',
@@ -238,9 +236,9 @@ function FeaturedEvent({ block, index }: { block: ScheduleBlock; index: number }
                 </div>
                 <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
                   {[
-                    { time: '19:10 – 19:15', name: 'Junior + Adultos' },
-                    { time: '19:15 – 19:20', name: 'Infantil + Cadete' },
-                    { time: '19:20 – 19:25', name: 'Mini' },
+                    { time: '19:15 – 19:20', name: 'Junior + Adultos' },
+                    { time: '19:20 – 19:25', name: 'Infantil + Cadete' },
+                    { time: '19:25 – 19:30', name: 'Mini' },
                   ].map((finale: { time: string; name: string }) => (
                     <div
                       key={finale.name}
@@ -353,7 +351,7 @@ export function HorarioSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_30%,rgba(226,18,18,0.05),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-4 mb-16">
-        <SectionHeader title="EL HORARIO" subtitle="Un día. Una batalla." />
+        <SectionHeader title="EL HORARIO" subtitle="Un día. 3 pruebas." />
       </div>
 
       <div className="relative max-w-3xl mx-auto px-6">

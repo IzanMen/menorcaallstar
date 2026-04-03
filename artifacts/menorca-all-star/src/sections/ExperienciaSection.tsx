@@ -25,7 +25,6 @@ export function ExperienciaSection() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.75, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="group relative py-12 md:py-16 border-b border-white/[0.06] last:border-b-0 overflow-hidden cursor-default"
-            data-testid={`item-experiencia-${i}`}
           >
             <span
               aria-hidden="true"

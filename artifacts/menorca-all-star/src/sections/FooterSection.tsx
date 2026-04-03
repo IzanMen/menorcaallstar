@@ -26,7 +26,7 @@ export function FooterSection() {
           className="w-full"
         >
           <p className="text-[0.6rem] text-primary/50 font-bold tracking-[0.7em] uppercase mb-6">
-            Menorca · Verano 2025
+            Menorca · Agosto 2026
           </p>
 
           <h2
@@ -58,7 +58,7 @@ export function FooterSection() {
           </div>
 
           <p className="text-[0.6rem] text-white/15 tracking-[0.4em] uppercase">
-            © 2025 Menorca All Star — Todos los derechos reservados
+            © 2026 Menorca All Star — Todos los derechos reservados
           </p>
         </motion.div>
       </div>
