@@ -170,3 +170,21 @@
   backdrop-filter: blur(24px);
   border: 1px solid hsl(var(--border) / 0.3);
 }
+
+.rules-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.rules-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.rules-scroll::-webkit-scrollbar-thumb {
+  background: rgba(226, 18, 18, 0.2);
+  border-radius: 999px;
+}
+.rules-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(226, 18, 18, 0.4);
+}
+.rules-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(226, 18, 18, 0.2) transparent;
+}

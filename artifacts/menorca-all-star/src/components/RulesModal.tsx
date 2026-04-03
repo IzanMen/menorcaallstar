@@ -224,8 +224,10 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
           animate="visible"
           exit="exit"
           className="fixed inset-0 z-[100] flex items-center justify-center px-4"
-          style={{ backdropFilter: 'blur(18px)', background: 'rgba(0,0,0,0.82)' }}
+          style={{ backdropFilter: 'blur(18px)', background: 'rgba(0,0,0,0.82)', overscrollBehavior: 'contain' }}
           onClick={onClose}
+          onWheel={(e) => e.stopPropagation()}
+          onTouchMove={(e) => e.stopPropagation()}
         >
           {[0, 0.1, 0.2].map((delay, i) => (
             <motion.div
@@ -328,7 +330,7 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
                 />
               </div>
 
-              <div ref={scrollRef} className="flex-1 overflow-y-auto px-6 sm:px-8 pb-8 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
+              <div ref={scrollRef} data-lenis-prevent className="rules-scroll flex-1 overflow-y-auto px-6 sm:px-8 pb-8" style={{ overscrollBehavior: 'contain' }}>
                 <motion.div
                   variants={contentVariants}
                   initial="hidden"
