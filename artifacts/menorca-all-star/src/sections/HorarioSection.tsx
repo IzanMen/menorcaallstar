@@ -254,11 +254,11 @@ function PeriodHeader({ title, delay = 0 }: { title: string; delay?: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
-      className="relative mb-8 mt-4"
+      className="relative mb-8 mt-4 h-10"
     >
       <span
         aria-hidden="true"
-        className="absolute right-0 top-1/2 -translate-y-1/2 font-black leading-none text-white/[0.02] select-none pointer-events-none tracking-tighter"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-black leading-none text-white/[0.02] select-none pointer-events-none tracking-tighter text-center whitespace-nowrap"
         style={{ fontSize: 'clamp(5rem, 20vw, 12rem)' }}
       >
         {title}
