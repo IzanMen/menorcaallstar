@@ -2,7 +2,6 @@ import { HeroSection } from '@/sections/HeroSection';
 import { PruebasSection } from '@/sections/PruebasSection';
 import { ElEquipoSection } from '@/sections/ElEquipoSection';
 import { HorarioSection } from '@/sections/HorarioSection';
-import { ExperienciaSection } from '@/sections/ExperienciaSection';
 import { FooterSection } from '@/sections/FooterSection';
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
       <PruebasSection />
       <ElEquipoSection />
       <HorarioSection />
-      <ExperienciaSection />
       <FooterSection />
     </div>
   );

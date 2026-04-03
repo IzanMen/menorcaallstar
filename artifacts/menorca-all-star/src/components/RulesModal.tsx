@@ -18,7 +18,6 @@ const RULES: Record<string, {
         items: [
           '8 equipos por categoría',
           'Máximo 5 jugadores por plantilla',
-          'Mínimo 4 jugadores (por confirmar)',
         ],
       },
       {
@@ -32,7 +31,6 @@ const RULES: Record<string, {
           'Partidos simultáneos con emparejamientos aleatorios',
           { bold: 'Primera ronda:', sub: ['2 partidos simultáneos (2 vs 2 equipos)'] },
           { bold: 'Segunda ronda:', sub: ['Ganadores vs Ganadores', 'Perdedores vs Perdedores'] },
-          'Todos los equipos juegan mínimo 2 partidos',
         ],
       },
       {
@@ -40,7 +38,6 @@ const RULES: Record<string, {
         items: [
           'El equipo que gana sus 2 partidos pasa directamente',
           'En caso de empate: pasa el de mayor diferencia de puntos',
-          'El mismo sistema aplica en ambos grupos',
         ],
       },
       {
@@ -78,8 +75,7 @@ const RULES: Record<string, {
         label: 'Rondas',
         items: [
           { bold: 'Primera ronda:', sub: ['Participan todas las parejas'] },
-          { bold: 'Clasificación:', sub: ['Las 3 mejores parejas de cada categoría'] },
-          { bold: 'Final:', sub: ['Las 3 clasificadas realizan un segundo intento'] },
+          { bold: 'Final:', sub: ['Las 3 parejas clasificadas realizan un segundo intento'] },
         ],
       },
       {
@@ -284,14 +280,8 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
                   variants={statusVariants}
                   initial="hidden"
                   animate="visible"
-                  className="flex items-center justify-between mb-5"
+                  className="flex items-center justify-end mb-5"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                    <span className="text-[0.6rem] text-primary/60 font-black tracking-[0.55em] uppercase tabular-nums">
-                      ACCESO CONCEDIDO · {data.code}
-                    </span>
-                  </div>
                   <button
                     onClick={onClose}
                     className="group flex items-center justify-center w-8 h-8 rounded-full border border-white/10 hover:border-primary/40 hover:bg-primary/10 transition-all duration-200"
