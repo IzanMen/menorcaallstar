@@ -1,8 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { GlowButton } from '@/components/GlowButton';
-import { ParticleCanvas } from '@/components/ParticleCanvas';
-import heroBg from '@/assets/hero-bg.png';
+import heroBg from '@/assets/hero-bg.webp';
 
 export function HeroSection() {
   const { scrollYProgress } = useScroll();
@@ -20,7 +19,6 @@ export function HeroSection() {
           decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
-        <ParticleCanvas />
       </div>
 
       <div
@@ -35,7 +33,7 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 40, filter: 'blur(20px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="w-full"
         >
           <h1
@@ -47,7 +45,7 @@ export function HeroSection() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 0.3, delay: 0.15 }}
             className="text-lg sm:text-2xl md:text-3xl text-primary font-display tracking-[0.35em] font-bold mb-8 md:mb-10"
           >
             EL EVENTO MÁS ÉPICO
@@ -57,7 +55,7 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
+          transition={{ duration: 0.3, delay: 0.2, ease: 'easeOut' }}
         >
           <GlowButton href="/inscripcion" size="sm" className="md:px-10 md:py-3 md:text-xl" data-testid="btn-inscripcion-hero">
             Inscripción

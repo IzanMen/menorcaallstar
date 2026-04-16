@@ -129,8 +129,8 @@ interface RulesModalProps {
 
 const backdropVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.35 } },
-  exit: { opacity: 0, transition: { duration: 0.3, delay: 0.15 } },
+  visible: { opacity: 1, transition: { duration: 0.15 } },
+  exit: { opacity: 0, transition: { duration: 0.15 } },
 };
 
 const scanVariants = (delay: number) => ({
@@ -138,56 +138,25 @@ const scanVariants = (delay: number) => ({
   visible: {
     x: '110vw',
     opacity: [1, 1, 0],
-    transition: { duration: 0.55, delay, ease: [0.4, 0, 0.6, 1] as [number,number,number,number] },
+    transition: { duration: 0.3, delay, ease: [0.4, 0, 0.6, 1] as [number, number, number, number] },
   },
 });
 
 const panelVariants = {
-  hidden: { y: -80, opacity: 0, scale: 0.92, rotateX: 8, filter: 'blur(8px)' },
+  hidden: { y: -20, opacity: 0, scale: 0.97 },
   visible: {
-    y: 0, opacity: 1, scale: 1, rotateX: 0, filter: 'blur(0px)',
-    transition: { type: 'spring', stiffness: 180, damping: 22, mass: 1, delay: 0.25 },
+    y: 0, opacity: 1, scale: 1,
+    transition: { type: 'spring', stiffness: 380, damping: 28, mass: 0.8 },
   },
   exit: {
-    y: 50, opacity: 0, scale: 0.95,
-    transition: { duration: 0.28, ease: 'easeIn' },
+    y: 20, opacity: 0, scale: 0.97,
+    transition: { duration: 0.15, ease: 'easeIn' },
   },
-};
-
-const bracketVariants = {
-  hidden: { opacity: 0, scale: 0.4 },
-  visible: (d: number) => ({
-    opacity: 1, scale: 1,
-    transition: { type: 'spring', stiffness: 350, damping: 20, delay: 0.55 + d * 0.05 },
-  }),
-};
-
-const statusVariants = {
-  hidden: { opacity: 0, y: -8 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.6 } },
-};
-
-const titleVariants = {
-  hidden: { clipPath: 'inset(0 100% 0 0)', opacity: 0.5 },
-  visible: {
-    clipPath: 'inset(0 0% 0 0)', opacity: 1,
-    transition: { duration: 0.55, delay: 0.68, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] },
-  },
-};
-
-const lineVariants = {
-  hidden: { scaleX: 0 },
-  visible: { scaleX: 1, transition: { duration: 0.5, delay: 0.8, ease: 'easeOut' } },
 };
 
 const contentVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.85 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 18, filter: 'blur(4px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.4, ease: 'easeOut' } },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.2 } },
 };
 
 export function RulesModal({ prueba, onClose }: RulesModalProps) {
@@ -225,7 +194,7 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
           onWheel={(e) => e.stopPropagation()}
           onTouchMove={(e) => e.stopPropagation()}
         >
-          {[0, 0.1, 0.2].map((delay, i) => (
+          {[0, 0.05, 0.1].map((delay, i) => (
             <motion.div
               key={i}
               variants={scanVariants(delay)}
@@ -248,7 +217,6 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
             exit="exit"
             onClick={(e) => e.stopPropagation()}
             className="relative w-full max-w-2xl max-h-[88vh] flex flex-col"
-            style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
           >
             {([
               { top: -2, left: -2, borderTop: '2px solid', borderLeft: '2px solid', borderRadius: '6px 0 0 0' },
@@ -256,12 +224,8 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
               { bottom: -2, left: -2, borderBottom: '2px solid', borderLeft: '2px solid', borderRadius: '0 0 0 6px' },
               { bottom: -2, right: -2, borderBottom: '2px solid', borderRight: '2px solid', borderRadius: '0 0 6px 0' },
             ] as CSSProperties[]).map((style, i) => (
-              <motion.div
+              <div
                 key={i}
-                custom={i}
-                variants={bracketVariants}
-                initial="hidden"
-                animate="visible"
                 className="absolute w-7 h-7 pointer-events-none"
                 style={{ ...style, borderColor: 'rgba(226,18,18,0.7)' }}
               />
@@ -276,12 +240,7 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
               }}
             >
               <div className="flex-shrink-0 p-6 sm:p-8 pb-0">
-                <motion.div
-                  variants={statusVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex items-center justify-end mb-5"
-                >
+                <div className="flex items-center justify-end mb-5">
                   <button
                     onClick={onClose}
                     className="group flex items-center justify-center w-8 h-8 rounded-full border border-white/10 hover:border-primary/40 hover:bg-primary/10 transition-all duration-200"
@@ -289,33 +248,21 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
                   >
                     <X className="w-4 h-4 text-white/40 group-hover:text-primary transition-colors duration-200" />
                   </button>
-                </motion.div>
-
-                <div className="overflow-hidden mb-2">
-                  <motion.h2
-                    variants={titleVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-none uppercase"
-                    style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-                  >
-                    {data.title}
-                  </motion.h2>
                 </div>
 
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition: { delay: 0.78, duration: 0.4 } }}
-                  className="text-white/35 text-sm font-sans mb-5"
+                <h2
+                  className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-none uppercase mb-2"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                 >
-                  {data.subtitle}
-                </motion.p>
+                  {data.title}
+                </h2>
 
-                <motion.div
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="h-px origin-left mb-6"
+                <p className="text-white/35 text-sm font-sans mb-5">
+                  {data.subtitle}
+                </p>
+
+                <div
+                  className="h-px mb-6"
                   style={{ background: 'linear-gradient(90deg, rgba(226,18,18,0.7) 0%, rgba(226,18,18,0.1) 60%, transparent 100%)' }}
                 />
               </div>
@@ -328,7 +275,7 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
                   className="space-y-6"
                 >
                   {data.sections.map((section) => (
-                    <motion.div key={section.label} variants={itemVariants}>
+                    <div key={section.label}>
                       <p className="text-[0.6rem] text-primary/55 font-black tracking-[0.5em] uppercase mb-3">
                         {section.label}
                       </p>
@@ -359,7 +306,7 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
                           )
                         )}
                       </ul>
-                    </motion.div>
+                    </div>
                   ))}
                 </motion.div>
               </div>

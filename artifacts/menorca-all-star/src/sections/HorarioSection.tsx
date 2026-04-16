@@ -18,10 +18,8 @@ interface ScheduleBlock {
   categories?: Category[];
 }
 
-interface Finale {
-  time: string;
-  name: string;
-}
+const FAST_FADE = { duration: 0.2 } as const;
+const FAST_FADE_VIEWPORT = { once: true, margin: '-40px' } as const;
 
 const MORNING: ScheduleBlock[] = [
   { time: '09:00', title: 'APERTURA DE PUERTAS', type: 'compact' },
@@ -77,33 +75,27 @@ const AFTERNOON: ScheduleBlock[] = [
   },
 ];
 
-function TimelineDot({ delay = 0, accent = false }: { delay?: number; accent?: boolean }) {
+function TimelineDot({ accent = false }: { accent?: boolean }) {
   return (
-    <motion.div
-      initial={{ scale: 0 }}
-      whileInView={{ scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay, type: 'spring', stiffness: 300 }}
-      className="relative flex-shrink-0"
-    >
+    <div className="relative flex-shrink-0">
       <div className={`w-3.5 h-3.5 rounded-full border-2 ${accent ? 'border-primary bg-primary/40' : 'border-white/30 bg-white/10'} relative z-10`} />
       {accent && (
         <div className="absolute inset-0 w-3.5 h-3.5 rounded-full bg-primary/40 animate-ping" />
       )}
-    </motion.div>
+    </div>
   );
 }
 
-function CompactEvent({ block, index }: { block: ScheduleBlock; index: number }) {
+function CompactEvent({ block }: { block: ScheduleBlock }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={FAST_FADE_VIEWPORT}
+      transition={FAST_FADE}
       className="flex items-center gap-5"
     >
-      <TimelineDot delay={index * 0.05} />
+      <TimelineDot />
       <div className="flex items-baseline gap-4 py-4">
         <span className="text-primary font-black text-lg tabular-nums tracking-tight">{block.time}</span>
         <span className="text-white/70 font-bold text-sm uppercase tracking-wider">{block.title}</span>
@@ -112,16 +104,16 @@ function CompactEvent({ block, index }: { block: ScheduleBlock; index: number })
   );
 }
 
-function BreakEvent({ block, index }: { block: ScheduleBlock; index: number }) {
+function BreakEvent({ block }: { block: ScheduleBlock }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: index * 0.05 }}
+      viewport={FAST_FADE_VIEWPORT}
+      transition={FAST_FADE}
       className="flex items-center gap-5"
     >
-      <TimelineDot delay={index * 0.05} />
+      <TimelineDot />
       <div className="flex-1 py-6">
         <div className="relative rounded-lg border border-dashed border-white/10 px-6 py-5 bg-white/[0.02]">
           <div className="flex items-baseline gap-4">
@@ -134,17 +126,17 @@ function BreakEvent({ block, index }: { block: ScheduleBlock; index: number }) {
   );
 }
 
-function FeaturedEvent({ block, index }: { block: ScheduleBlock; index: number }) {
+function FeaturedEvent({ block }: { block: ScheduleBlock }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.7, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={FAST_FADE_VIEWPORT}
+      transition={FAST_FADE}
       className="flex items-start gap-5"
     >
       <div className="pt-6">
-        <TimelineDot delay={index * 0.05} accent />
+        <TimelineDot accent />
       </div>
 
       <div className="flex-1 group">
@@ -186,13 +178,9 @@ function FeaturedEvent({ block, index }: { block: ScheduleBlock; index: number }
 
             {block.categories && (
               <div className="mt-5 space-y-0">
-                {block.categories.map((cat, ci) => (
-                  <motion.div
+                {block.categories.map((cat) => (
+                  <div
                     key={cat.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.2 + ci * 0.06 }}
                     className="flex items-center gap-3 py-2.5 border-t border-white/[0.04] first:border-t-0"
                   >
                     <span className="text-xs text-white/25 font-bold tabular-nums tracking-tight min-w-[6.5rem]">
@@ -201,7 +189,7 @@ function FeaturedEvent({ block, index }: { block: ScheduleBlock; index: number }
                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/[0.07] border border-primary/15 text-primary/80 text-xs font-bold uppercase tracking-wider">
                       {cat.name}
                     </span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             )}
@@ -258,17 +246,17 @@ function FeaturedEvent({ block, index }: { block: ScheduleBlock; index: number }
   );
 }
 
-function FinaleEvent({ block, index }: { block: ScheduleBlock; index: number }) {
+function FinaleEvent({ block }: { block: ScheduleBlock }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={FAST_FADE_VIEWPORT}
+      transition={FAST_FADE}
       className="flex items-start gap-5"
     >
       <div className="pt-8">
-        <TimelineDot delay={index * 0.05} accent />
+        <TimelineDot accent />
       </div>
 
       <div className="flex-1">
@@ -308,15 +296,9 @@ function FinaleEvent({ block, index }: { block: ScheduleBlock; index: number }) 
   );
 }
 
-function PeriodHeader({ title, delay = 0 }: { title: string; delay?: number }) {
+function PeriodHeader({ title }: { title: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
-      className="relative mb-8 mt-4 h-10"
-    >
+    <div className="relative mb-8 mt-4 h-10">
       <span
         aria-hidden="true"
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-black leading-none text-white/[0.02] select-none pointer-events-none tracking-tighter text-center whitespace-nowrap"
@@ -328,20 +310,20 @@ function PeriodHeader({ title, delay = 0 }: { title: string; delay?: number }) {
         <div className="w-8 h-[2px] bg-primary" />
         <h3 className="text-xs font-black tracking-[0.55em] text-primary uppercase">{title}</h3>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
-function renderBlock(block: ScheduleBlock, index: number) {
+function renderBlock(block: ScheduleBlock) {
   switch (block.type) {
     case 'featured':
-      return <FeaturedEvent key={block.title} block={block} index={index} />;
+      return <FeaturedEvent key={block.title} block={block} />;
     case 'compact':
-      return <CompactEvent key={block.title} block={block} index={index} />;
+      return <CompactEvent key={block.title} block={block} />;
     case 'break':
-      return <BreakEvent key={block.title} block={block} index={index} />;
+      return <BreakEvent key={block.title} block={block} />;
     case 'finale':
-      return <FinaleEvent key={block.title} block={block} index={index} />;
+      return <FinaleEvent key={block.title} block={block} />;
   }
 }
 
@@ -360,13 +342,13 @@ export function HorarioSection() {
         <PeriodHeader title="MAÑANA" />
 
         <div className="space-y-2">
-          {MORNING.map((block, i) => renderBlock(block, i))}
+          {MORNING.map((block) => renderBlock(block))}
         </div>
 
-        <PeriodHeader title="TARDE" delay={0.1} />
+        <PeriodHeader title="TARDE" />
 
         <div className="space-y-2">
-          {AFTERNOON.map((block, i) => renderBlock(block, i))}
+          {AFTERNOON.map((block) => renderBlock(block))}
         </div>
       </div>
     </section>

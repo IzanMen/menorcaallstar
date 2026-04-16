@@ -19,10 +19,10 @@ export function FooterSection() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center px-6 pt-28 pb-12 flex flex-col items-center">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.25 }}
           className="w-full"
         >
           <p className="text-[0.6rem] text-primary/50 font-bold tracking-[0.7em] uppercase mb-6">

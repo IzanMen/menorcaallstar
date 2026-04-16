@@ -1,11 +1,14 @@
-import { useState, type MouseEvent } from 'react';
+import { lazy, Suspense, useState, type MouseEvent } from 'react';
 import { motion } from 'framer-motion';
 import { GlowButton } from '@/components/GlowButton';
 import { SectionHeader } from '@/components/SectionHeader';
-import { RulesModal } from '@/components/RulesModal';
 import img3x3 from '@/assets/3x3.webp';
 import imgTwoball from '@/assets/twoball.webp';
 import imgSkills from '@/assets/skills.webp';
+
+const RulesModal = lazy(() =>
+  import('@/components/RulesModal').then((m) => ({ default: m.RulesModal }))
+);
 
 const PRUEBAS = [
   { key: '3X3', title: '3X3', img: img3x3, color: 'primary' as const },
@@ -25,10 +28,10 @@ export function PruebasSection() {
           {PRUEBAS.map((prueba, i) => (
             <motion.div
               key={prueba.key}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
+              transition={{ duration: 0.25 }}
               className="group relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden glass-panel cursor-pointer flex flex-col justify-end p-8"
               whileHover={{ scale: 1.03 }}
               onClick={() => setActiveRules(prueba.key)}
@@ -68,7 +71,9 @@ export function PruebasSection() {
         </div>
       </section>
 
-      <RulesModal prueba={activeRules} onClose={() => setActiveRules(null)} />
+      <Suspense fallback={null}>
+        <RulesModal prueba={activeRules} onClose={() => setActiveRules(null)} />
+      </Suspense>
     </>
   );
 }
