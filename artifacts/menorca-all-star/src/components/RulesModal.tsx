@@ -1,5 +1,5 @@
 import { useEffect, useRef, type CSSProperties } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { X } from 'lucide-react';
 
 const RULES: Record<string, {
@@ -127,7 +127,7 @@ interface RulesModalProps {
   onClose: () => void;
 }
 
-const backdropVariants = {
+const backdropVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.15 } },
   exit: { opacity: 0, transition: { duration: 0.15 } },
@@ -142,11 +142,11 @@ const scanVariants = (delay: number) => ({
   },
 });
 
-const panelVariants = {
+const panelVariants: Variants = {
   hidden: { y: -20, opacity: 0, scale: 0.97 },
   visible: {
     y: 0, opacity: 1, scale: 1,
-    transition: { type: 'spring', stiffness: 380, damping: 28, mass: 0.8 },
+    transition: { type: 'spring' as const, stiffness: 380, damping: 28, mass: 0.8 },
   },
   exit: {
     y: 20, opacity: 0, scale: 0.97,
@@ -154,7 +154,7 @@ const panelVariants = {
   },
 };
 
-const contentVariants = {
+const contentVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.2 } },
 };

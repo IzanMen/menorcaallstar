@@ -71,9 +71,11 @@ export function PruebasSection() {
         </div>
       </section>
 
-      <Suspense fallback={null}>
-        <RulesModal prueba={activeRules} onClose={() => setActiveRules(null)} />
-      </Suspense>
+      {activeRules && (
+        <Suspense fallback={null}>
+          <RulesModal prueba={activeRules} onClose={() => setActiveRules(null)} />
+        </Suspense>
+      )}
     </>
   );
 }
