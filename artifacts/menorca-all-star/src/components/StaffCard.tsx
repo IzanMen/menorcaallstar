@@ -15,7 +15,7 @@ export function StaffCard({ delay = 0, role, count, compact = false, multiple = 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.2, delay: Math.min(delay, 0) }}
+      transition={{ duration: 0.2 }}
       whileHover={{ scale: 1.02 }}
       className={`group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/25 hover:shadow-[0_0_40px_rgba(226,18,18,0.15)] transition-all duration-500 cursor-default ${compact ? 'aspect-[4/3]' : 'aspect-[3/4]'}`}
       style={{ background: 'linear-gradient(160deg, #111111 0%, #080808 100%)' }}
