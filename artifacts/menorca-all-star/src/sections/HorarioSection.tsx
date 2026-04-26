@@ -16,62 +16,62 @@ interface ScheduleBlock {
   type: 'featured' | 'compact' | 'break' | 'finale';
   image?: string;
   categories?: Category[];
+  note?: string;
 }
 
 const FAST_FADE = { duration: 0.2 } as const;
 const FAST_FADE_VIEWPORT = { once: true, margin: '-40px' } as const;
 
 const MORNING: ScheduleBlock[] = [
-  { time: '09:00', title: 'APERTURA DE PUERTAS', type: 'compact' },
-  { time: '09:45', title: 'DISCURSO INICIAL', type: 'compact' },
+  { time: '07:00', endTime: '08:00', title: 'MONTAJE DE INSTALACIONES Y LOGÍSTICA', type: 'compact' },
+  { time: '08:00', endTime: '08:30', title: 'REUNIÓN TÉCNICA DEL STAFF', type: 'compact' },
+  { time: '08:30', endTime: '09:40', title: 'APERTURA DE PUERTAS Y CHECK-IN', type: 'compact' },
+  { time: '09:40', endTime: '09:50', title: 'DISCURSO DE BIENVENIDA', type: 'compact' },
+  { time: '09:50', endTime: '10:00', title: 'CALENTAMIENTO Y PREPARACIÓN DE PISTA', type: 'compact' },
   {
-    time: '10:00', endTime: '12:40',
+    time: '10:00', endTime: '12:55',
     title: '3X3 — FASE DE GRUPOS', type: 'featured', image: img3x3,
     categories: [
       { time: '10:00 – 10:40', name: 'Mini' },
-      { time: '10:40 – 11:20', name: 'Infantil' },
-      { time: '11:20 – 12:00', name: 'Cadete' },
-      { time: '12:00 – 12:40', name: 'Junior + Adultos' },
+      { time: '10:45 – 11:25', name: 'Infantil' },
+      { time: '11:30 – 12:10', name: 'Cadete' },
+      { time: '12:15 – 12:55', name: 'Junior + Adultos' },
     ],
   },
   {
-    time: '12:45', endTime: '14:15',
-    title: 'CONCURSO DE HABILIDADES', type: 'featured', image: imgSkills,
-    categories: [
-      { time: '12:45 – 13:08', name: 'Junior + Adultos' },
-      { time: '13:08 – 13:31', name: 'Infantil + Cadete' },
-      { time: '13:31 – 13:54', name: 'Mini' },
-    ],
+    time: '13:00', endTime: '14:15',
+    title: 'CONCURSO DE TIRO TWOBALL', type: 'featured', image: imgTwoball,
+    note: 'Todas las categorías',
   },
-  { time: '14:15', endTime: '14:30', title: 'ENTREGA DE PREMIOS', type: 'compact' },
-  { time: '14:30', endTime: '15:30', title: 'DESCANSO', type: 'break' },
+  { time: '14:15', endTime: '14:30', title: 'ENTREGA DE PREMIOS — TIRO', type: 'compact' },
+  { time: '14:30', endTime: '15:30', title: 'PAUSA PARA COMIDA Y DESCANSO', type: 'break' },
 ];
 
 const AFTERNOON: ScheduleBlock[] = [
   {
     time: '15:30', endTime: '17:30',
-    title: '3X3 — ELIMINATORIAS', type: 'featured', image: img3x3,
+    title: 'CIRCUITO DE HABILIDADES', type: 'featured', image: imgSkills,
+  },
+  { time: '17:30', endTime: '18:00', title: 'ENTREGA DE PREMIOS — HABILIDADES', type: 'compact' },
+  {
+    time: '18:00', endTime: '18:40',
+    title: '3X3 — SEMIFINALES', type: 'featured', image: img3x3,
     categories: [
-      { time: '15:30 – 16:00', name: 'Mini' },
-      { time: '16:00 – 16:30', name: 'Infantil' },
-      { time: '16:30 – 17:00', name: 'Cadete' },
-      { time: '17:00 – 17:30', name: 'Junior + Adultos' },
+      { time: '18:00 – 18:10', name: 'Mini' },
+      { time: '18:10 – 18:20', name: 'Infantil' },
+      { time: '18:20 – 18:30', name: 'Cadete' },
+      { time: '18:30 – 18:40', name: 'Junior + Adultos' },
     ],
   },
-  { time: '17:30', endTime: '18:00', title: 'PREMIOS 3X3', type: 'compact' },
   {
-    time: '18:00', endTime: '19:30',
-    title: 'CONCURSO DE TIRO', type: 'featured', image: imgTwoball,
-    categories: [
-      { time: '18:00 – 18:23', name: 'Junior + Adultos' },
-      { time: '18:23 – 18:46', name: 'Infantil + Cadete' },
-      { time: '18:46 – 19:09', name: 'Mini' },
-    ],
+    time: '18:40', endTime: '19:40',
+    title: '3X3 — FINALES', type: 'featured', image: img3x3,
+    note: 'Partidos finales · Todas las categorías',
   },
-  { time: '19:30', endTime: '20:00', title: 'PREMIOS TIRO', type: 'compact' },
+  { time: '19:40', endTime: '20:30', title: 'ENTREGA DE PREMIOS 3X3', type: 'compact' },
   {
-    time: '20:00', endTime: '22:00',
-    title: 'ESPECTÁCULOS Y CIERRE', type: 'finale',
+    time: '20:30', endTime: '22:00',
+    title: 'CIERRE DEL EVENTO Y MÚSICA FINAL', type: 'finale',
   },
 ];
 
@@ -96,8 +96,10 @@ function CompactEvent({ block }: { block: ScheduleBlock }) {
       className="flex items-center gap-5"
     >
       <TimelineDot />
-      <div className="flex items-baseline gap-4 py-4">
-        <span className="text-primary font-black text-lg tabular-nums tracking-tight">{block.time}</span>
+      <div className="flex items-baseline gap-4 py-4 flex-wrap">
+        <span className="text-primary font-black text-lg tabular-nums tracking-tight">
+          {block.time}{block.endTime ? ` – ${block.endTime}` : ''}
+        </span>
         <span className="text-white/70 font-bold text-sm uppercase tracking-wider">{block.title}</span>
       </div>
     </motion.div>
@@ -116,7 +118,7 @@ function BreakEvent({ block }: { block: ScheduleBlock }) {
       <TimelineDot />
       <div className="flex-1 py-6">
         <div className="relative rounded-lg border border-dashed border-white/10 px-6 py-5 bg-white/[0.02]">
-          <div className="flex items-baseline gap-4">
+          <div className="flex items-baseline gap-4 flex-wrap">
             <span className="text-white/25 font-black text-lg tabular-nums">{block.time} – {block.endTime}</span>
             <span className="text-white/25 font-bold text-sm uppercase tracking-[0.3em]">{block.title}</span>
           </div>
@@ -176,6 +178,12 @@ function FeaturedEvent({ block }: { block: ScheduleBlock }) {
               {block.title}
             </h4>
 
+            {block.note && (
+              <p className="mt-3 text-xs text-primary/70 font-bold uppercase tracking-[0.3em]">
+                {block.note}
+              </p>
+            )}
+
             {block.categories && (
               <div className="mt-5 space-y-0">
                 {block.categories.map((cat) => (
@@ -191,52 +199,6 @@ function FeaturedEvent({ block }: { block: ScheduleBlock }) {
                     </span>
                   </div>
                 ))}
-              </div>
-            )}
-            {block.title.includes('CONCURSO DE HABILIDADES') && (
-              <div className="mt-5">
-                <div className="flex items-center gap-3">
-                  <span className="text-[0.65rem] text-primary/60 font-bold tracking-[0.4em] uppercase">Finales</span>
-                  <div className="h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent" />
-                </div>
-                <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
-                  {[
-                    { time: '14:00 – 14:05', name: 'Junior + Adultos' },
-                    { time: '14:05 – 14:10', name: 'Infantil + Cadete' },
-                    { time: '14:10 – 14:15', name: 'Mini' },
-                  ].map((finale: { time: string; name: string }) => (
-                    <div
-                      key={finale.name}
-                      className="rounded-xl border border-primary/10 bg-black/30 px-3 py-3 text-left hover:border-primary/25 transition-colors duration-300"
-                    >
-                      <div className="text-[0.65rem] text-white/35 font-black tracking-tight tabular-nums">{finale.time}</div>
-                      <div className="text-sm font-bold text-primary/85 uppercase tracking-wider mt-1">{finale.name}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {block.title.includes('CONCURSO DE TIRO') && (
-              <div className="mt-5">
-                <div className="flex items-center gap-3">
-                  <span className="text-[0.65rem] text-primary/60 font-bold tracking-[0.4em] uppercase">Finales</span>
-                  <div className="h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent" />
-                </div>
-                <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
-                  {[
-                    { time: '19:15 – 19:20', name: 'Junior + Adultos' },
-                    { time: '19:20 – 19:25', name: 'Infantil + Cadete' },
-                    { time: '19:25 – 19:30', name: 'Mini' },
-                  ].map((finale: { time: string; name: string }) => (
-                    <div
-                      key={finale.name}
-                      className="rounded-xl border border-primary/10 bg-black/30 px-3 py-3 text-left hover:border-primary/25 transition-colors duration-300"
-                    >
-                      <div className="text-[0.65rem] text-white/35 font-black tracking-tight tabular-nums">{finale.time}</div>
-                      <div className="text-sm font-bold text-primary/85 uppercase tracking-wider mt-1">{finale.name}</div>
-                    </div>
-                  ))}
-                </div>
               </div>
             )}
           </div>
@@ -287,7 +249,7 @@ function FinaleEvent({ block }: { block: ScheduleBlock }) {
             </h4>
 
             <p className="text-white/30 font-sans text-sm max-w-md mx-auto">
-              El broche final del evento con actuaciones en vivo, premios especiales y la clausura oficial
+              El broche final del evento con música, premios especiales y la clausura oficial
             </p>
           </div>
         </div>

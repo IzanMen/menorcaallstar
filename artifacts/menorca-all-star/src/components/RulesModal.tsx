@@ -11,13 +11,43 @@ const RULES: Record<string, {
   '3X3': {
     title: '3X3',
     code: 'PROTOCOLO·A1',
-    subtitle: 'Reglas oficiales FIBA 3x3',
+    subtitle: 'Formato dinámico · 3 a 5 jugadores por equipo',
     sections: [
       {
-        label: 'Equipos',
+        label: 'Presentación',
         items: [
-          '8 equipos por categoría',
-          'Máximo 5 jugadores por plantilla',
+          'Competición de 3x3 diseñada para maximizar el ritmo de juego y la técnica individual',
+          'Forma tu equipo (de 3 a 5 integrantes) y compite en un entorno dinámico',
+          'Reglas adaptadas para garantizar la máxima fluidez en pista',
+        ],
+      },
+      {
+        label: 'Dinámica de Juego',
+        items: [
+          'Partidos de 7 minutos a tiempo corrido en media pista',
+          'Juego continuo: tras cada canasta o rebote defensivo, hay que llevar el balón detrás de la línea de triple para iniciar el ataque',
+        ],
+      },
+      {
+        label: 'Puntuación',
+        items: [
+          { bold: 'Canastas dentro del arco:', sub: ['1 punto'] },
+          { bold: 'Aciertos desde la línea de triple:', sub: ['2 puntos'] },
+        ],
+      },
+      {
+        label: 'Sistema de Competición',
+        items: [
+          'Fase de grupos inicial y fase final eliminatoria para los clasificados',
+          'En caso de empate al final del tiempo, el ganador se decide mediante una tanda de tiros libres a muerte súbita',
+        ],
+      },
+      {
+        label: 'Normas Básicas',
+        items: [
+          'El juego siempre inicia con un "checkball" (pasar el balón al rival para empezar)',
+          'Cambios libres y rápidos antes de poner el balón en juego',
+          'A partir de la 5ª falta de equipo, se lanzarán tiros libres',
         ],
       },
       {
@@ -25,24 +55,11 @@ const RULES: Record<string, {
         items: ['Mini', 'Infantil', 'Cadete', 'Junior + Adultos'],
       },
       {
-        label: 'Fase de Grupos',
+        label: 'Plazas',
         items: [
-          '2 grupos de 4 equipos',
-          'Partidos simultáneos con emparejamientos aleatorios',
-          { bold: 'Primera ronda:', sub: ['2 partidos simultáneos (2 vs 2 equipos)'] },
-          { bold: 'Segunda ronda:', sub: ['Ganadores vs Ganadores', 'Perdedores vs Perdedores'] },
+          'Limitadas a 8 equipos por categoría para asegurar buena organización y máximo tiempo de juego',
+          'Registra a tu equipo antes de que se agoten las plazas',
         ],
-      },
-      {
-        label: 'Clasificación a Semifinales',
-        items: [
-          'El equipo que gana sus 2 partidos pasa directamente',
-          'En caso de empate: pasa el de mayor diferencia de puntos',
-        ],
-      },
-      {
-        label: 'Fase Final',
-        items: ['Semifinales', 'Final'],
       },
     ],
   },
@@ -52,71 +69,111 @@ const RULES: Record<string, {
     subtitle: 'Modalidad twoball · Competición por parejas',
     sections: [
       {
-        label: 'Formato',
+        label: 'Presentación',
         items: [
-          'Competición por parejas',
-          'Modalidad twoball (tiro continuo y dinámico)',
-          'Uno tira, recoge el rebote y pasa al compañero',
-          'Cada pareja elige dónde tirar en cada momento',
+          '¿Buena mano desde el perímetro o aseguras desde cerca?',
+          'Pon a prueba tu puntería y la compenetración con tu compañero',
+          'Un minuto de máxima intensidad donde cada canasta cuenta para subir en el ranking',
         ],
       },
       {
-        label: 'Duración',
-        items: ['1 minuto por pareja para realizar todos los lanzamientos'],
+        label: 'Dinámica por Parejas',
+        items: [
+          'Durante 1 minuto, los dos jugadores se alternan para tirar',
+          'Uno lanza, recoge su propio rebote y pasa al compañero, que repite la acción',
+          'No se permiten dos tiros consecutivos del mismo jugador',
+        ],
       },
       {
         label: 'Puntuación',
         items: [
-          'Diversas posiciones de tiro disponibles',
-          'Cada posición tiene una puntuación distinta',
+          'Diferentes posiciones alrededor del aro',
+          'Cada zona tiene un valor asignado según su dificultad',
+          'Trazad vuestra estrategia para sumar el máximo de puntos',
         ],
       },
       {
-        label: 'Rondas',
+        label: 'Sistema de Competición',
         items: [
-          { bold: 'Primera ronda:', sub: ['Participan todas las parejas'] },
-          { bold: 'Final:', sub: ['Las 3 parejas clasificadas realizan un segundo intento'] },
+          'Ronda general donde todas las parejas compiten por un puesto en la Gran Final',
+          'Solo accederán las 3 mejores parejas de cada categoría',
+        ],
+      },
+      {
+        label: 'Reglas de Clasificación',
+        items: [
+          'En caso de empate en la puntuación, se clasificará la pareja que haya anotado más canastas desde las posiciones de mayor valor',
+          'Es fundamental respetar la alternancia de tiro',
+          'El incumplimiento de las normas de relevo supondrá la descalificación',
         ],
       },
       {
         label: 'Categorías',
         items: ['Mini', 'Infantil + Cadete', 'Junior + Adultos'],
+      },
+      {
+        label: 'Plazas',
+        items: ['Limitadas a 20 parejas por categoría para asegurar la fluidez del concurso'],
       },
     ],
   },
   'SKILLS CHALLENGE': {
     title: 'CONCURSO DE HABILIDADES',
     code: 'PROTOCOLO·C3',
-    subtitle: 'Circuito individual · Toda la pista',
+    subtitle: 'Circuito individual · Velocidad y precisión',
     sections: [
       {
-        label: 'Formato',
+        label: 'Presentación',
         items: [
-          'Competición individual',
-          'Circuito que recorre toda la pista',
+          '¿Eres el más rápido con el balón en las manos?',
+          'Pon a prueba tu control, velocidad y precisión',
+          'No solo cuenta correr; aquí la técnica es la que manda en el cronómetro',
         ],
       },
       {
-        label: 'Duración',
-        items: ['Máximo 1 minuto para completar el circuito'],
+        label: 'El Reto',
+        items: [
+          'Completar un circuito técnico (bote, pases y obstáculos) en el menor tiempo posible',
+          'Cada segundo cuenta y la precisión es clave para evitar penalizaciones',
+        ],
       },
       {
-        label: 'Sistema de Puntuación',
+        label: 'Dinámica',
         items: [
-          { bold: 'Clasificación por tiempo:', sub: ['Menos segundos = mejor posición'] },
-          { bold: 'Penalizaciones:', sub: ['Los fallos en el circuito añaden segundos al tiempo final'] },
-          {
-            bold: 'Bonus tiro final:',
-            sub: [
-              'Hay un lanzamiento final al finalizar el circuito',
-              'Si se anota → se reducen segundos del tiempo total',
-            ],
-          },
+          'Los participantes salen de uno en uno con un tiempo máximo de 1 minuto',
+          'El recorrido termina con un lanzamiento final que, si lo anotas, ¡te restará segundos del tiempo total!',
+        ],
+      },
+      {
+        label: 'Puntuación y Penalizaciones',
+        items: [
+          'El resultado se basa exclusivamente en el tiempo',
+          'Si cometes errores o saltas obstáculos, se sumarán segundos de penalización',
+          'Los fallos no obligan a repetir la acción, pero castigan la marca final',
+        ],
+      },
+      {
+        label: 'Sistema de Competición',
+        items: [
+          'Ronda general para todos los inscritos',
+          'Solo los mejores tiempos de cada categoría se verán las caras en la Gran Final',
+        ],
+      },
+      {
+        label: 'Normas Importantes',
+        items: [
+          'Es obligatorio seguir el orden establecido del circuito',
+          'Si no se termina el recorrido en el minuto reglamentario, el participante quedará descalificado',
+          'En caso de empate en el crono, ganará quien tenga menos penalizaciones',
         ],
       },
       {
         label: 'Categorías',
         items: ['Mini', 'Infantil + Cadete', 'Junior + Adultos'],
+      },
+      {
+        label: 'Plazas',
+        items: ['Limitadas a 20 participantes por categoría'],
       },
     ],
   },
