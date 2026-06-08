@@ -11,92 +11,92 @@ const RULES: Record<string, {
   '3X3': {
     title: '3X3',
     code: 'PROTOCOL·A1',
-    subtitle: 'Torneig 3x3 · 29 d\u2019agost · Pavelló de Ferreries',
+    subtitle: 'Torneo 3x3 \u00b7 29 de agosto \u00b7 Pabell\u00f3n de Ferreries',
     sections: [
       {
-        label: 'Presentació',
+        label: 'Presentaci\u00f3n',
         items: [
-          'Prepara el teu equip i vine a viure una jornada el 29 d\u2019agost plena de pur bàsquet, competició i el millor ambient de l\u2019estiu al Pavelló de Ferreries. Espectacle garantit!',
+          'Prepara tu equipo y ven a vivir una jornada el 29 de agosto llena de puro baloncesto, competici\u00f3n y el mejor ambiente del verano en el Pabell\u00f3n de Ferreries. \u00a1Espect\u00e1culo garantizado!',
         ],
       },
       {
-        label: 'Categories i Composició de l\u2019Equip',
+        label: 'Categor\u00edas y Composici\u00f3n del Equipo',
         items: [
-          { bold: 'Categories disponibles:', sub: ['Mini', 'Infantil', 'Cadet', 'Júnior + Adult (obertes a tothom)'] },
-          { bold: 'Format de l\u2019equip:', sub: ['Equips tancats de 5 jugadors exactes', '3 a pista i 2 suplents per garantir rotacions, canvis ràpids i el màxim ritme'] },
+          { bold: 'Categor\u00edas disponibles:', sub: ['Mini', 'Infantil', 'Cadete', 'J\u00fanior + Adulto (abiertas a todos)'] },
+          { bold: 'Formato del equipo:', sub: ['Equipos cerrados de 5 jugadores exactos', '3 en pista y 2 suplentes para garantizar rotaciones, cambios r\u00e1pidos y el m\u00e1ximo ritmo'] },
         ],
       },
       {
-        label: 'Dinàmica i Puntuació',
+        label: 'Din\u00e1mica y Puntuaci\u00f3n',
         items: [
-          { bold: 'Partits:', sub: ['7 minuts de joc a temps corregut (la Gran Final serà de 10 minuts)', 'Sense límit de punts'] },
-          { bold: 'Valors dels tirs:', sub: ['Cistelles dins la línia: 1 punt', 'Llançaments des de més enllà de la línia de triple: 2 punts'] },
-          { bold: 'Emoció fins al final:', sub: ['En cas d\u2019empat, el guanyador es decidirà als tirs lliures en una ronda de mort sobtada'] },
+          { bold: 'Partidos:', sub: ['7 minutos de juego a tiempo corregido (la Gran Final ser\u00e1 de 10 minutos)', 'Sin l\u00edmite de puntos'] },
+          { bold: 'Valores de los tiros:', sub: ['Canastas dentro de la l\u00ednea: 1 punto', 'Lanzamientos desde m\u00e1s all\u00e1 de la l\u00ednea de triple: 2 puntos'] },
+          { bold: 'Emoci\u00f3n hasta el final:', sub: ['En caso de empate, el ganador se decidir\u00e1 en tiros libres en una ronda de muerte s\u00fabita'] },
         ],
       },
       {
-        label: 'Sistema de Competició',
+        label: 'Sistema de Competici\u00f3n',
         items: [
-          { bold: 'Fase de Grups:', sub: ['Primera fase de dues rondes explosives', 'Si hi ha empats a la classificació, el basket-average decideix qui passa'] },
-          { bold: 'Fase Final:', sub: ['Els millors equips es classifiquen directament per a les Semifinals i la Gran Final pel títol de campions'] },
+          { bold: 'Fase de Grupos:', sub: ['Primera fase de dos rondas explosivas', 'Si hay empates en la clasificaci\u00f3n, el basket-average decide qui\u00e9n pasa'] },
+          { bold: 'Fase Final:', sub: ['Los mejores equipos se clasifican directamente para las Semifinales y la Gran Final por el t\u00edtulo de campeones'] },
         ],
       },
       {
-        label: 'Preu d\u2019Inscripció',
+        label: 'Precio de Inscripci\u00f3n',
         items: [
-          '5 € per jugador (25 € per equip complet de 5 integrants)',
-          'Les places s\u2019atorgaran per estricte ordre de pagament fins a completar el quadre de competició',
+          '5 \u20ac por jugador (25 \u20ac por equipo completo de 5 integrantes)',
+          'Las plazas se otorgar\u00e1n por estricto orden de pago hasta completar el cuadro de competici\u00f3n',
         ],
       },
     ],
   },
   'TWOBALL': {
     title: 'TWOBALL',
-    code: 'PROTOCOL·B2',
-    subtitle: 'Shooting Challenge · Competició per parelles',
+    code: 'PROTOCOL\u00b7B2',
+    subtitle: 'Shooting Challenge \u00b7 Competici\u00f3n por parejas',
     sections: [
       {
-        label: 'Presentació',
+        label: 'Presentaci\u00f3n',
         items: [
-          'Posa a prova la teva punteria i la coordinació amb la teva parella al concurs de tir més espectacular del Menorca All Star',
+          'Pon a prueba tu punter\u00eda y la coordinaci\u00f3n con tu pareja en el concurso de tiro m\u00e1s espectacular del Menorca All Star',
         ],
       },
       {
-        label: 'Categories',
-        items: ['Mini', 'Infantil + Cadet', 'Júnior + Adult'],
+        label: 'Categor\u00edas',
+        items: ['Mini', 'Infantil + Cadete', 'J\u00fanior + Adulto'],
       },
       {
-        label: 'Format de Competició',
+        label: 'Formato de Competici\u00f3n',
         items: [
-          'El TwoBall es disputa per parelles',
-          'Un jugador llança, recull el seu propi rebot i passa la pilota al company, que haurà de tirar des d\u2019una zona',
-          'Els llançaments s\u2019han d\u2019alternar obligatòriament entre els dos membres de la parella',
-          'L\u2019objectiu és aconseguir la màxima puntuació possible abans que s\u2019acabi el temps',
+          'El TwoBall se disputa por parejas',
+          'Un jugador lanza, recoge su propio rebote y pasa la pelota al compa\u00f1ero, que tendr\u00e1 que tirar desde una zona',
+          'Los lanzamientos se deben alternar obligatoriamente entre los dos miembros de la pareja',
+          'El objetivo es conseguir la m\u00e1xima puntuaci\u00f3n posible antes de que acabe el tiempo',
         ],
       },
       {
-        label: 'Zones de Puntuació',
+        label: 'Zonas de Puntuaci\u00f3n',
         items: [
-          { bold: 'Tir lliure:', sub: ['1 punt'] },
-          { bold: 'Bandes laterals:', sub: ['2 punts'] },
-          { bold: 'Zona intermèdia:', sub: ['3 punts'] },
-          { bold: 'Triple:', sub: ['4 punts'] },
-          { bold: 'Mig camp:', sub: ['8 punts'] },
+          { bold: 'Tiro libre:', sub: ['1 punto'] },
+          { bold: 'Bandas laterales:', sub: ['2 puntos'] },
+          { bold: 'Zona intermedia:', sub: ['3 puntos'] },
+          { bold: 'Triple:', sub: ['4 puntos'] },
+          { bold: 'Medio campo:', sub: ['8 puntos'] },
         ],
       },
       {
-        label: 'Sistema de Competició',
+        label: 'Sistema de Competici\u00f3n',
         items: [
-          { bold: 'Fase Classificatòria:', sub: ['Cada parella disposarà d\u20191 minut per sumar el màxim nombre de punts possible'] },
-          { bold: 'Repesca Relàmpec:', sub: ['Les parelles no classificades directament tindran una segona oportunitat per accedir a la final'] },
-          { bold: 'Gran Final:', sub: ['Les 3 millors parelles competiran a la pista principal davant de tot el públic'] },
+          { bold: 'Fase Clasificatoria:', sub: ['Cada pareja dispondr\u00e1 de 1 minuto para sumar el m\u00e1ximo n\u00famero de puntos posible'] },
+          { bold: 'Repesca Rel\u00e1mpago:', sub: ['Las parejas no clasificadas directamente tendr\u00e1n una segunda oportunidad para acceder a la final'] },
+          { bold: 'Gran Final:', sub: ['Las 3 mejores parejas competir\u00e1n en la pista principal ante todo el p\u00fablico'] },
         ],
       },
       {
-        label: 'Inscripció',
+        label: 'Inscripci\u00f3n',
         items: [
-          '5 € per participant · Participació per parelles',
-          'Les places són limitades i s\u2019assignaran per ordre d\u2019inscripció i pagament',
+          '5 \u20ac por participante \u00b7 Participaci\u00f3n por parejas',
+          'Las plazas son limitadas y se asignar\u00e1n por orden de inscripci\u00f3n y pago',
         ],
       },
     ],

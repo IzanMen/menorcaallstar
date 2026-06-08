@@ -22,19 +22,19 @@ const FAST_FADE = { duration: 0.2 } as const;
 const FAST_FADE_VIEWPORT = { once: true, margin: '-40px' } as const;
 
 const MORNING: ScheduleBlock[] = [
-  { time: '09:00', title: 'OBERTURA DE PORTES I ACREDITACIÓ', type: 'compact' },
-  { time: '09:45', title: 'PRESENTACIÓ OFICIAL', type: 'compact' },
+  { time: '09:00', title: 'APERTURA DE PUERTAS Y ACREDITACIÓN', type: 'compact' },
+  { time: '09:45', title: 'PRESENTACIÓN OFICIAL', type: 'compact' },
   {
     time: '10:00', endTime: '13:20',
-    title: '3X3 — FASE DE GRUPS', type: 'featured', image: img3x3,
+    title: '3X3 — FASE DE GRUPOS', type: 'featured', image: img3x3,
     categories: [
       { time: '10:00 – 10:50', name: 'Mini' },
       { time: '10:50 – 11:40', name: 'Infantil' },
-      { time: '11:40 – 12:30', name: 'Cadet' },
-      { time: '12:30 – 13:20', name: 'Júnior + Adult' },
+      { time: '11:40 – 12:30', name: 'Cadete' },
+      { time: '12:30 – 13:20', name: 'Júnior + Adulto' },
     ],
   },
-  { time: '13:30', endTime: '14:30', title: 'PAUSA PER DINAR — BAR ACTIU', type: 'break' },
+  { time: '13:30', endTime: '14:30', title: 'PAUSA PARA COMER — BAR ACTIVO', type: 'break' },
 ];
 
 const AFTERNOON: ScheduleBlock[] = [
@@ -43,25 +43,25 @@ const AFTERNOON: ScheduleBlock[] = [
     title: 'TWOBALL — SHOOTING CHALLENGE', type: 'featured', image: imgTwoball,
     categories: [
       { time: '14:45 – 15:15', name: 'Mini' },
-      { time: '15:15 – 15:45', name: 'Infantil + Cadet' },
-      { time: '15:45 – 16:15', name: 'Júnior + Adult' },
-      { time: '16:15 – 17:00', name: 'Repesques' },
-      { time: '17:00 – 17:30', name: 'Grans Finals' },
-      { time: '17:30 – 17:45', name: 'Lliurament de premis' },
+      { time: '15:15 – 15:45', name: 'Infantil + Cadete' },
+      { time: '15:45 – 16:15', name: 'Júnior + Adulto' },
+      { time: '16:15 – 17:00', name: 'Repescas' },
+      { time: '17:00 – 17:30', name: 'Grandes Finales' },
+      { time: '17:30 – 17:45', name: 'Entrega de premios' },
     ],
   },
   {
     time: '18:00', endTime: '20:40',
     title: '3X3 — FASE FINAL', type: 'featured', image: img3x3,
     categories: [
-      { time: '18:00 – 19:20', name: 'Semifinals' },
-      { time: '19:20 – 20:40', name: 'Finals oficials' },
+      { time: '18:00 – 19:20', name: 'Semifinales' },
+      { time: '19:20 – 20:40', name: 'Finales oficiales' },
     ],
   },
-  { time: '20:40', endTime: '21:30', title: 'LLIURAMENT DE TROFEUS I CLAUSURA', type: 'compact' },
+  { time: '20:40', endTime: '21:30', title: 'ENTREGA DE TROFEOS Y CLAUSURA', type: 'compact' },
   {
     time: '21:30', endTime: '22:30',
-    title: 'FESTA FINAL AMB MÚSICA I DJ', type: 'finale',
+    title: 'FIESTA FINAL CON MÚSICA Y DJ', type: 'finale',
   },
 ];
 
@@ -223,7 +223,7 @@ function FinaleEvent({ block }: { block: ScheduleBlock }) {
           />
 
           <div className="relative z-10 p-8 sm:p-10 text-center">
-            <p className="text-[0.6rem] text-primary/50 font-bold tracking-[0.6em] uppercase mb-4">Gran finale</p>
+            <p className="text-[0.6rem] text-primary/50 font-bold tracking-[0.6em] uppercase mb-4">Gran final</p>
 
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="text-primary font-black text-2xl sm:text-3xl tabular-nums">{block.time}</span>
@@ -239,7 +239,7 @@ function FinaleEvent({ block }: { block: ScheduleBlock }) {
             </h4>
 
             <p className="text-white/30 font-sans text-sm max-w-md mx-auto">
-              El millor ambient per tancar el Menorca All Star: música, DJ i festa fins al final
+              El mejor ambiente para cerrar el Menorca All Star: música, DJ y fiesta hasta el final
             </p>
           </div>
         </div>
@@ -285,19 +285,19 @@ export function HorarioSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_30%,rgba(226,18,18,0.05),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-4 mb-16">
-        <SectionHeader title="EL HORARIO" subtitle="29 d'agost · Pavelló de Ferreries" />
+        <SectionHeader title="EL HORARIO" subtitle="29 de agosto · Pabellón de Ferreries" />
       </div>
 
       <div className="relative max-w-3xl mx-auto px-6">
         <div className="absolute left-[1.05rem] sm:left-[1.55rem] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/[0.07] to-transparent" />
 
-        <PeriodHeader title="MATÍ" />
+        <PeriodHeader title="MAÑANA" />
 
         <div className="space-y-2">
           {MORNING.map((block) => renderBlock(block))}
         </div>
 
-        <PeriodHeader title="TARDA" />
+        <PeriodHeader title="TARDE" />
 
         <div className="space-y-2">
           {AFTERNOON.map((block) => renderBlock(block))}
