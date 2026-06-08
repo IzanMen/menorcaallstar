@@ -10,170 +10,94 @@ const RULES: Record<string, {
 }> = {
   '3X3': {
     title: '3X3',
-    code: 'PROTOCOLO·A1',
-    subtitle: 'Formato dinámico · 3 a 5 jugadores por equipo',
+    code: 'PROTOCOL·A1',
+    subtitle: 'Torneig 3x3 · 29 d\u2019agost · Pavelló de Ferreries',
     sections: [
       {
-        label: 'Presentación',
+        label: 'Presentació',
         items: [
-          'Competición de 3x3 diseñada para maximizar el ritmo de juego y la técnica individual',
-          'Forma tu equipo (de 3 a 5 integrantes) y compite en un entorno dinámico',
-          'Reglas adaptadas para garantizar la máxima fluidez en pista',
+          'Prepara el teu equip i vine a viure una jornada el 29 d\u2019agost plena de pur bàsquet, competició i el millor ambient de l\u2019estiu al Pavelló de Ferreries. Espectacle garantit!',
         ],
       },
       {
-        label: 'Dinámica de Juego',
+        label: 'Categories i Composició de l\u2019Equip',
         items: [
-          'Partidos de 7 minutos a tiempo corrido en media pista',
-          'Juego continuo: tras cada canasta o rebote defensivo, hay que llevar el balón detrás de la línea de triple para iniciar el ataque',
+          { bold: 'Categories disponibles:', sub: ['Mini', 'Infantil', 'Cadet', 'Júnior + Adult (obertes a tothom)'] },
+          { bold: 'Format de l\u2019equip:', sub: ['Equips tancats de 5 jugadors exactes', '3 a pista i 2 suplents per garantir rotacions, canvis ràpids i el màxim ritme'] },
         ],
       },
       {
-        label: 'Puntuación',
+        label: 'Dinàmica i Puntuació',
         items: [
-          { bold: 'Canastas dentro del arco:', sub: ['1 punto'] },
-          { bold: 'Aciertos desde la línea de triple:', sub: ['2 puntos'] },
+          { bold: 'Partits:', sub: ['7 minuts de joc a temps corregut (la Gran Final serà de 10 minuts)', 'Sense límit de punts'] },
+          { bold: 'Valors dels tirs:', sub: ['Cistelles dins la línia: 1 punt', 'Llançaments des de més enllà de la línia de triple: 2 punts'] },
+          { bold: 'Emoció fins al final:', sub: ['En cas d\u2019empat, el guanyador es decidirà als tirs lliures en una ronda de mort sobtada'] },
         ],
       },
       {
-        label: 'Sistema de Competición',
+        label: 'Sistema de Competició',
         items: [
-          'Fase de grupos inicial y fase final eliminatoria para los clasificados',
-          'En caso de empate al final del tiempo, el ganador se decide mediante una tanda de tiros libres a muerte súbita',
+          { bold: 'Fase de Grups:', sub: ['Primera fase de dues rondes explosives', 'Si hi ha empats a la classificació, el basket-average decideix qui passa'] },
+          { bold: 'Fase Final:', sub: ['Els millors equips es classifiquen directament per a les Semifinals i la Gran Final pel títol de campions'] },
         ],
       },
       {
-        label: 'Normas Básicas',
+        label: 'Preu d\u2019Inscripció',
         items: [
-          'El juego siempre inicia con un "checkball" (pasar el balón al rival para empezar)',
-          'Cambios libres y rápidos antes de poner el balón en juego',
-          'A partir de la 5ª falta de equipo, se lanzarán tiros libres',
-        ],
-      },
-      {
-        label: 'Categorías',
-        items: ['Mini', 'Infantil', 'Cadete', 'Junior + Adultos'],
-      },
-      {
-        label: 'Plazas',
-        items: [
-          'Limitadas a 8 equipos por categoría para asegurar buena organización y máximo tiempo de juego',
-          'Registra a tu equipo antes de que se agoten las plazas',
+          '5 € per jugador (25 € per equip complet de 5 integrants)',
+          'Les places s\u2019atorgaran per estricte ordre de pagament fins a completar el quadre de competició',
         ],
       },
     ],
   },
   'TWOBALL': {
-    title: 'CONCURSO DE TIRO',
-    code: 'PROTOCOLO·B2',
-    subtitle: 'Modalidad twoball · Competición por parejas',
+    title: 'TWOBALL',
+    code: 'PROTOCOL·B2',
+    subtitle: 'Shooting Challenge · Competició per parelles',
     sections: [
       {
-        label: 'Presentación',
+        label: 'Presentació',
         items: [
-          '¿Buena mano desde el perímetro o aseguras desde cerca?',
-          'Pon a prueba tu puntería y la compenetración con tu compañero',
-          'Un minuto de máxima intensidad donde cada canasta cuenta para subir en el ranking',
+          'Posa a prova la teva punteria i la coordinació amb la teva parella al concurs de tir més espectacular del Menorca All Star',
         ],
       },
       {
-        label: 'Dinámica por Parejas',
+        label: 'Categories',
+        items: ['Mini', 'Infantil + Cadet', 'Júnior + Adult'],
+      },
+      {
+        label: 'Format de Competició',
         items: [
-          'Durante 1 minuto, los dos jugadores se alternan para tirar',
-          'Uno lanza, recoge su propio rebote y pasa al compañero, que repite la acción',
-          'No se permiten dos tiros consecutivos del mismo jugador',
+          'El TwoBall es disputa per parelles',
+          'Un jugador llança, recull el seu propi rebot i passa la pilota al company, que haurà de tirar des d\u2019una zona',
+          'Els llançaments s\u2019han d\u2019alternar obligatòriament entre els dos membres de la parella',
+          'L\u2019objectiu és aconseguir la màxima puntuació possible abans que s\u2019acabi el temps',
         ],
       },
       {
-        label: 'Puntuación',
+        label: 'Zones de Puntuació',
         items: [
-          'Diferentes posiciones alrededor del aro',
-          'Cada zona tiene un valor asignado según su dificultad',
-          'Trazad vuestra estrategia para sumar el máximo de puntos',
+          { bold: 'Tir lliure:', sub: ['1 punt'] },
+          { bold: 'Bandes laterals:', sub: ['2 punts'] },
+          { bold: 'Zona intermèdia:', sub: ['3 punts'] },
+          { bold: 'Triple:', sub: ['4 punts'] },
+          { bold: 'Mig camp:', sub: ['8 punts'] },
         ],
       },
       {
-        label: 'Sistema de Competición',
+        label: 'Sistema de Competició',
         items: [
-          'Ronda general donde todas las parejas compiten por un puesto en la Gran Final',
-          'Solo accederán las 3 mejores parejas de cada categoría',
+          { bold: 'Fase Classificatòria:', sub: ['Cada parella disposarà d\u20191 minut per sumar el màxim nombre de punts possible'] },
+          { bold: 'Repesca Relàmpec:', sub: ['Les parelles no classificades directament tindran una segona oportunitat per accedir a la final'] },
+          { bold: 'Gran Final:', sub: ['Les 3 millors parelles competiran a la pista principal davant de tot el públic'] },
         ],
       },
       {
-        label: 'Reglas de Clasificación',
+        label: 'Inscripció',
         items: [
-          'En caso de empate en la puntuación, se clasificará la pareja que haya anotado más canastas desde las posiciones de mayor valor',
-          'Es fundamental respetar la alternancia de tiro',
-          'El incumplimiento de las normas de relevo supondrá la descalificación',
+          '5 € per participant · Participació per parelles',
+          'Les places són limitades i s\u2019assignaran per ordre d\u2019inscripció i pagament',
         ],
-      },
-      {
-        label: 'Categorías',
-        items: ['Mini', 'Infantil + Cadete', 'Junior + Adultos'],
-      },
-      {
-        label: 'Plazas',
-        items: ['Limitadas a 20 parejas por categoría para asegurar la fluidez del concurso'],
-      },
-    ],
-  },
-  'SKILLS CHALLENGE': {
-    title: 'CONCURSO DE HABILIDADES',
-    code: 'PROTOCOLO·C3',
-    subtitle: 'Circuito individual · Velocidad y precisión',
-    sections: [
-      {
-        label: 'Presentación',
-        items: [
-          '¿Eres el más rápido con el balón en las manos?',
-          'Pon a prueba tu control, velocidad y precisión',
-          'No solo cuenta correr; aquí la técnica es la que manda en el cronómetro',
-        ],
-      },
-      {
-        label: 'El Reto',
-        items: [
-          'Completar un circuito técnico (bote, pases y obstáculos) en el menor tiempo posible',
-          'Cada segundo cuenta y la precisión es clave para evitar penalizaciones',
-        ],
-      },
-      {
-        label: 'Dinámica',
-        items: [
-          'Los participantes salen de uno en uno con un tiempo máximo de 1 minuto',
-          'El recorrido termina con un lanzamiento final que, si lo anotas, ¡te restará segundos del tiempo total!',
-        ],
-      },
-      {
-        label: 'Puntuación y Penalizaciones',
-        items: [
-          'El resultado se basa exclusivamente en el tiempo',
-          'Si cometes errores o saltas obstáculos, se sumarán segundos de penalización',
-          'Los fallos no obligan a repetir la acción, pero castigan la marca final',
-        ],
-      },
-      {
-        label: 'Sistema de Competición',
-        items: [
-          'Ronda general para todos los inscritos',
-          'Solo los mejores tiempos de cada categoría se verán las caras en la Gran Final',
-        ],
-      },
-      {
-        label: 'Normas Importantes',
-        items: [
-          'Es obligatorio seguir el orden establecido del circuito',
-          'Si no se termina el recorrido en el minuto reglamentario, el participante quedará descalificado',
-          'En caso de empate en el crono, ganará quien tenga menos penalizaciones',
-        ],
-      },
-      {
-        label: 'Categorías',
-        items: ['Mini', 'Infantil + Cadete', 'Junior + Adultos'],
-      },
-      {
-        label: 'Plazas',
-        items: ['Limitadas a 20 participantes por categoría'],
       },
     ],
   },

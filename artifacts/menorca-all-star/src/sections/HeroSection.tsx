@@ -48,7 +48,7 @@ export function HeroSection() {
             transition={{ duration: 0.3, delay: 0.15 }}
             className="text-lg sm:text-2xl md:text-3xl text-primary font-display tracking-[0.35em] font-bold mb-8 md:mb-10"
           >
-            EL EVENTO MÁS ÉPICO
+            L'ESTIU TE PISTA
           </motion.p>
         </motion.div>
 

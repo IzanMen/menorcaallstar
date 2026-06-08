@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { SiInstagram } from 'react-icons/si';
+import { SiInstagram, SiTiktok } from 'react-icons/si';
+import { Mail } from 'lucide-react';
 import { GlowButton } from '@/components/GlowButton';
 
 export function FooterSection() {
@@ -30,15 +31,11 @@ export function FooterSection() {
           </p>
 
           <h2
-            className="font-black uppercase leading-[0.88] tracking-tight mb-4 text-shadow-glow"
+            className="font-black uppercase leading-[0.88] tracking-tight mb-8 text-shadow-glow"
             style={{ fontSize: 'clamp(3.5rem, 18vw, 9rem)' }}
           >
             MENORCA<br />ALL STAR
           </h2>
-
-          <p className="text-primary font-display font-bold tracking-[0.35em] uppercase text-sm md:text-base mb-12">
-            La batalla definitiva
-          </p>
 
           <GlowButton href="/inscripcion" size="xl" className="mb-16" data-testid="btn-inscripcion-footer">
             INSCRIBIRME
@@ -46,14 +43,36 @@ export function FooterSection() {
 
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-10" />
 
-          <div className="flex items-center justify-center gap-5 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
             <a
-              href="#"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
               className="group flex items-center gap-2.5 px-5 py-3 rounded-full border border-white/10 text-white/50 hover:border-primary/50 hover:text-white hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"
               data-testid="link-instagram"
             >
               <SiInstagram className="w-5 h-5 group-hover:text-primary transition-colors" />
               <span className="text-xs font-bold tracking-widest uppercase">Instagram</span>
+            </a>
+
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-center gap-2.5 px-5 py-3 rounded-full border border-white/10 text-white/50 hover:border-primary/50 hover:text-white hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"
+              data-testid="link-tiktok"
+            >
+              <SiTiktok className="w-5 h-5 group-hover:text-primary transition-colors" />
+              <span className="text-xs font-bold tracking-widest uppercase">TikTok</span>
+            </a>
+
+            <a
+              href="mailto:menorcaallstar@gmail.com"
+              className="group flex items-center gap-2.5 px-5 py-3 rounded-full border border-white/10 text-white/50 hover:border-primary/50 hover:text-white hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"
+              data-testid="link-contacto"
+            >
+              <Mail className="w-5 h-5 group-hover:text-primary transition-colors" />
+              <span className="text-xs font-bold tracking-widest uppercase">Contacto</span>
             </a>
           </div>
 

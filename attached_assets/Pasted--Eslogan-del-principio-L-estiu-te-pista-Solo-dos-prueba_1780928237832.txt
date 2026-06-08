@@ -1,0 +1,81 @@
+-Eslogan del principio: L’estiu te pista
+-Solo dos pruebas no tres, quitar circuito de habilidades
+-Cambiar reglas 3x3:
+Torneig 3x3 Menorca All Star
+Prepara el teu equip i vine a viure una jornada el 29 d'agost plena de pur bàsquet, competició i el millor ambient de l'estiu al Pavelló de Ferreries. Espectacle garantit!
+Categories i Composició de l'Equip
+Categories disponibles: Mini, Infantil, Cadet i Júnior + Adult (obertes a tothom).
+Format de l'equip: Equips tancats de 5 jugadors exactes (3 a pista i 2 suplents per garantir rotacions, canvis ràpids i el màxim ritme a la pista).
+Dinàmica i Puntuació
+Partits: 7 minuts de joc a temps corregut (la Gran Final serà de 10 minuts). Sense límit de punts.
+Valors dels tirs: Les cistelles dins la línia sumen 1 punt i els llançaments des de més enllà de la línia de triple sumen 2 punts.
+Emoció fins al final: En cas d'empat al final del temps, el guanyador es decidirà als tirs lliures en una ronda de mort sobtada que farà vibrar el pavelló.
+Sistema de Competició
+Fase de Grups: Una primera fase de dues rondes explosives on cada punt anotat és vital. Si hi ha empats a la classificació, el basket-average decidirà qui passa, així que s'ha de lluitar fins a l'últim segon de cada partit.
+Fase Final: Els millors equips de la fase de grups es classificaran directament per jugar les Semifinals i la Gran Final pel títol de campions.
+Preu d'Inscripció
+5 € per jugador (25 € per equip complet de 5 integrants).
+Nota: Les places s'atorgaran per estricte ordre de pagament fins a completar el quadre de competició.
+
+-Cambiar reglas twoball:
+TWOBALL (SHOOTING CHALLENGE)
+Posa a prova la teva punteria i la coordinació amb la teva parella al concurs de tir més espectacular del Menorca All Star.
+Categories
+• Mini
+• Infantil + Cadet
+• Júnior + Adult
+Format de competició
+El TwoBall es disputa per parelles.
+Durant cada torn, un jugador llança, recull el seu propi rebot i passa la pilota al company, que haurà de tirar desde una zona. Els llançaments s'han d'alternar obligatòriament entre els dos membres de la parella.
+L'objectiu és aconseguir la màxima puntuació possible abans que s'acabi el temps.
+Zones de puntuació
+• Tir lliure: 1 punt
+• Bandes laterals: 2 punts
+• Zona intermèdia: 3 punts
+• Triple: 4 punts
+• Mig camp: 8 punts
+Sistema de competició
+Fase Classificatòria:
+Cada parella disposarà d'1 minut per sumar el màxim nombre de punts possible.
+Repesca Relàmpec:
+Les parelles no classificades directament tindran una segona oportunitat per accedir a la final.
+Gran Final:
+Les 3 millors parelles competiran a la pista principal davant de tot el públic per proclamar-se campiones del TwoBall.
+Inscripció
+• 5 € per participant
+• Participació per parelles
+Les places són limitades i s'assignaran per ordre d'inscripció i pagament.
+
+-Quitar sección de el equipo, no lo veo necessario
+-Cambiar el horario:
+HORARI OFICIAL — 29 D'AGOST
+Matí
+09:00 → Obertura de portes i acreditació d'equips
+09:45 → Presentació oficial del Menorca All Star
+Torneig 3x3 — Fase de Grups
+10:00 – 10:50 → Categoria Mini
+10:50 – 11:40 → Categoria Infantil
+11:40 – 12:30 → Categoria Cadet
+12:30 – 13:20 → Categoria Júnior + Adult
+Descans
+13:30 – 14:30 → Pausa per dinar — Bar actiu
+TwoBall — Shooting Challenge
+14:45 – 15:15 → TwoBall Mini
+15:15 – 15:45 → TwoBall Infantil + Cadet
+15:45 – 16:15 → TwoBall Júnior + Adult
+16:15 – 17:00 → Repesques
+17:00 – 17:30 → Grans Finals TwoBall
+17:30 – 17:45 → Lliurament de premis TwoBall
+Torneig 3x3 — Fase Final
+18:00 – 19:20 → Semifinals 3x3
+19:20 – 20:40 → Finals oficials 3x3
+Clausura
+20:40 – 21:30 → Lliurament de trofeus i clausura oficial
+21:30 – 22:30 → Festa final amb música i DJ
+
+-Botones de instagram i tiktok
+-Quitar lo de la batalla definitiva del footer
+-Poner un boton de contacto por gmail
+-Añadir sección de patrocinadores con los logos que te paso
+-pequeño menu arriba con “inscrpciones” “resultados en directo”
+- Crear una página de resultados en directo vacía de momento

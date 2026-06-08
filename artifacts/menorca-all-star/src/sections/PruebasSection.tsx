@@ -4,7 +4,6 @@ import { GlowButton } from '@/components/GlowButton';
 import { SectionHeader } from '@/components/SectionHeader';
 import img3x3 from '@/assets/3x3.webp';
 import imgTwoball from '@/assets/twoball.webp';
-import imgSkills from '@/assets/skills.webp';
 
 const RulesModal = lazy(() =>
   import('@/components/RulesModal').then((m) => ({ default: m.RulesModal }))
@@ -13,7 +12,6 @@ const RulesModal = lazy(() =>
 const PRUEBAS = [
   { key: '3X3', title: '3X3', img: img3x3, color: 'primary' as const },
   { key: 'TWOBALL', title: 'TWOBALL', img: imgTwoball, color: 'secondary' as const },
-  { key: 'SKILLS CHALLENGE', title: 'SKILLS CHALLENGE', img: imgSkills, color: 'accent' as const },
 ];
 
 export function PruebasSection() {
@@ -24,7 +22,7 @@ export function PruebasSection() {
       <section className="relative py-32 px-4 max-w-7xl mx-auto z-10">
         <SectionHeader title="LAS PRUEBAS" subtitle="Categorias según tu edad" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
           {PRUEBAS.map((prueba, i) => (
             <motion.div
               key={prueba.key}

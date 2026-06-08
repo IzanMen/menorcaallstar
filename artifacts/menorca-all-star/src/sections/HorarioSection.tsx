@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/SectionHeader';
 import img3x3 from '@/assets/3x3.webp';
-import imgSkills from '@/assets/skills.webp';
 import imgTwoball from '@/assets/twoball.webp';
 
 interface Category {
@@ -23,55 +22,46 @@ const FAST_FADE = { duration: 0.2 } as const;
 const FAST_FADE_VIEWPORT = { once: true, margin: '-40px' } as const;
 
 const MORNING: ScheduleBlock[] = [
-  { time: '07:00', endTime: '08:00', title: 'MONTAJE DE INSTALACIONES Y LOGÍSTICA', type: 'compact' },
-  { time: '08:00', endTime: '08:30', title: 'REUNIÓN TÉCNICA DEL STAFF', type: 'compact' },
-  { time: '08:30', endTime: '09:40', title: 'APERTURA DE PUERTAS Y CHECK-IN', type: 'compact' },
-  { time: '09:40', endTime: '09:50', title: 'DISCURSO DE BIENVENIDA', type: 'compact' },
-  { time: '09:50', endTime: '10:00', title: 'CALENTAMIENTO Y PREPARACIÓN DE PISTA', type: 'compact' },
+  { time: '09:00', title: 'OBERTURA DE PORTES I ACREDITACIÓ', type: 'compact' },
+  { time: '09:45', title: 'PRESENTACIÓ OFICIAL', type: 'compact' },
   {
-    time: '10:00', endTime: '12:55',
-    title: '3X3 — FASE DE GRUPOS', type: 'featured', image: img3x3,
+    time: '10:00', endTime: '13:20',
+    title: '3X3 — FASE DE GRUPS', type: 'featured', image: img3x3,
     categories: [
-      { time: '10:00 – 10:40', name: 'Mini' },
-      { time: '10:45 – 11:25', name: 'Infantil' },
-      { time: '11:30 – 12:10', name: 'Cadete' },
-      { time: '12:15 – 12:55', name: 'Junior + Adultos' },
+      { time: '10:00 – 10:50', name: 'Mini' },
+      { time: '10:50 – 11:40', name: 'Infantil' },
+      { time: '11:40 – 12:30', name: 'Cadet' },
+      { time: '12:30 – 13:20', name: 'Júnior + Adult' },
     ],
   },
-  {
-    time: '13:00', endTime: '14:15',
-    title: 'CONCURSO DE TIRO TWOBALL', type: 'featured', image: imgTwoball,
-    note: 'Todas las categorías',
-  },
-  { time: '14:15', endTime: '14:30', title: 'ENTREGA DE PREMIOS — TIRO', type: 'compact' },
-  { time: '14:30', endTime: '15:30', title: 'PAUSA PARA COMIDA Y DESCANSO', type: 'break' },
+  { time: '13:30', endTime: '14:30', title: 'PAUSA PER DINAR — BAR ACTIU', type: 'break' },
 ];
 
 const AFTERNOON: ScheduleBlock[] = [
   {
-    time: '15:30', endTime: '17:30',
-    title: 'CIRCUITO DE HABILIDADES', type: 'featured', image: imgSkills,
-  },
-  { time: '17:30', endTime: '18:00', title: 'ENTREGA DE PREMIOS — HABILIDADES', type: 'compact' },
-  {
-    time: '18:00', endTime: '18:40',
-    title: '3X3 — SEMIFINALES', type: 'featured', image: img3x3,
+    time: '14:45', endTime: '17:45',
+    title: 'TWOBALL — SHOOTING CHALLENGE', type: 'featured', image: imgTwoball,
     categories: [
-      { time: '18:00 – 18:10', name: 'Mini' },
-      { time: '18:10 – 18:20', name: 'Infantil' },
-      { time: '18:20 – 18:30', name: 'Cadete' },
-      { time: '18:30 – 18:40', name: 'Junior + Adultos' },
+      { time: '14:45 – 15:15', name: 'Mini' },
+      { time: '15:15 – 15:45', name: 'Infantil + Cadet' },
+      { time: '15:45 – 16:15', name: 'Júnior + Adult' },
+      { time: '16:15 – 17:00', name: 'Repesques' },
+      { time: '17:00 – 17:30', name: 'Grans Finals' },
+      { time: '17:30 – 17:45', name: 'Lliurament de premis' },
     ],
   },
   {
-    time: '18:40', endTime: '19:40',
-    title: '3X3 — FINALES', type: 'featured', image: img3x3,
-    note: 'Partidos finales · Todas las categorías',
+    time: '18:00', endTime: '20:40',
+    title: '3X3 — FASE FINAL', type: 'featured', image: img3x3,
+    categories: [
+      { time: '18:00 – 19:20', name: 'Semifinals' },
+      { time: '19:20 – 20:40', name: 'Finals oficials' },
+    ],
   },
-  { time: '19:40', endTime: '20:30', title: 'ENTREGA DE PREMIOS 3X3', type: 'compact' },
+  { time: '20:40', endTime: '21:30', title: 'LLIURAMENT DE TROFEUS I CLAUSURA', type: 'compact' },
   {
-    time: '20:30', endTime: '22:00',
-    title: 'CIERRE DEL EVENTO Y MÚSICA FINAL', type: 'finale',
+    time: '21:30', endTime: '22:30',
+    title: 'FESTA FINAL AMB MÚSICA I DJ', type: 'finale',
   },
 ];
 
@@ -249,7 +239,7 @@ function FinaleEvent({ block }: { block: ScheduleBlock }) {
             </h4>
 
             <p className="text-white/30 font-sans text-sm max-w-md mx-auto">
-              El broche final del evento con música, premios especiales y la clausura oficial
+              El millor ambient per tancar el Menorca All Star: música, DJ i festa fins al final
             </p>
           </div>
         </div>
@@ -295,19 +285,19 @@ export function HorarioSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_30%,rgba(226,18,18,0.05),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-4 mb-16">
-        <SectionHeader title="EL HORARIO" subtitle="Un día. 3 pruebas." />
+        <SectionHeader title="EL HORARIO" subtitle="29 d'agost · Pavelló de Ferreries" />
       </div>
 
       <div className="relative max-w-3xl mx-auto px-6">
         <div className="absolute left-[1.05rem] sm:left-[1.55rem] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/[0.07] to-transparent" />
 
-        <PeriodHeader title="MAÑANA" />
+        <PeriodHeader title="MATÍ" />
 
         <div className="space-y-2">
           {MORNING.map((block) => renderBlock(block))}
         </div>
 
-        <PeriodHeader title="TARDE" />
+        <PeriodHeader title="TARDA" />
 
         <div className="space-y-2">
           {AFTERNOON.map((block) => renderBlock(block))}
