@@ -45,7 +45,7 @@ export function FooterSection() {
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/menorcaallstar?igsh=aHg0bnZxdDg1MWtz"
               target="_blank"
               rel="noreferrer"
               className="group flex items-center gap-2.5 px-5 py-3 rounded-full border border-white/10 text-white/50 hover:border-primary/50 hover:text-white hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"
@@ -56,7 +56,7 @@ export function FooterSection() {
             </a>
 
             <a
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@menorca.all.star?_r=1&_t=ZN-974fFUYRRiw"
               target="_blank"
               rel="noreferrer"
               className="group flex items-center gap-2.5 px-5 py-3 rounded-full border border-white/10 text-white/50 hover:border-primary/50 hover:text-white hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"

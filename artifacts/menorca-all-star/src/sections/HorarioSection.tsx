@@ -285,7 +285,7 @@ export function HorarioSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_30%,rgba(226,18,18,0.05),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-4 mb-16">
-        <SectionHeader title="EL HORARIO" subtitle="29 de agosto · Pabellón de Ferreries" />
+        <SectionHeader title="EL HORARIO" subtitle="29 de agosto" />
       </div>
 
       <div className="relative max-w-3xl mx-auto px-6">
