@@ -1,28 +1,31 @@
 import { useEffect, useRef, type CSSProperties } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { X } from 'lucide-react';
+import { GlowButton } from './GlowButton';
 
 const RULES: Record<string, {
   title: string;
   code: string;
   subtitle: string;
+  cta: string;
   sections: { label: string; items: (string | { bold: string; sub?: string[] })[] }[];
 }> = {
   '3X3': {
     title: '3X3',
     code: 'PROTOCOL·A1',
-    subtitle: 'Torneo 3x3 \u00b7 29 de agosto \u00b7 Pabell\u00f3n de Ferreries',
+    subtitle: 'Torneo 3x3 \u00b7 29 de agosto',
+    cta: 'Inscribirse al Torneo 3x3',
     sections: [
       {
         label: 'Presentaci\u00f3n',
         items: [
-          'Prepara tu equipo y ven a vivir una jornada el 29 de agosto llena de puro baloncesto, competici\u00f3n y el mejor ambiente del verano en el Pabell\u00f3n de Ferreries. \u00a1Espect\u00e1culo garantizado!',
+          'Prepara tu equipo y ven a vivir una jornada el 29 de agosto llena de puro baloncesto, competici\u00f3n y el mejor ambiente del verano. \u00a1Espect\u00e1culo garantizado!',
         ],
       },
       {
         label: 'Categor\u00edas y Composici\u00f3n del Equipo',
         items: [
-          { bold: 'Categor\u00edas disponibles:', sub: ['Mini', 'Infantil', 'Cadete', 'J\u00fanior + Adulto (abiertas a todos)'] },
+          { bold: 'Categor\u00edas disponibles:', sub: ['Mini', 'Infantil', 'Cadete', 'J\u00fanior + Adulto'] },
           { bold: 'Formato del equipo:', sub: ['Equipos cerrados de 5 jugadores exactos', '3 en pista y 2 suplentes para garantizar rotaciones, cambios r\u00e1pidos y el m\u00e1ximo ritmo'] },
         ],
       },
@@ -54,6 +57,7 @@ const RULES: Record<string, {
     title: 'TWOBALL',
     code: 'PROTOCOL\u00b7B2',
     subtitle: 'Shooting Challenge \u00b7 Competici\u00f3n por parejas',
+    cta: 'Inscribirse al TwoBall',
     sections: [
       {
         label: 'Presentaci\u00f3n',
@@ -95,7 +99,7 @@ const RULES: Record<string, {
       {
         label: 'Inscripci\u00f3n',
         items: [
-          '5 \u20ac por participante \u00b7 Participaci\u00f3n por parejas',
+          '5 \u20ac por jugador (10 \u20ac por pareja en total)',
           'Las plazas son limitadas y se asignar\u00e1n por orden de inscripci\u00f3n y pago',
         ],
       },
@@ -289,6 +293,11 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
                       </ul>
                     </div>
                   ))}
+                  <div className="pt-2">
+                    <GlowButton href="/inscripcion" size="md" className="w-full" data-testid={`btn-inscripcion-${data.title.toLowerCase()}`}>
+                      {data.cta}
+                    </GlowButton>
+                  </div>
                 </motion.div>
               </div>
 
