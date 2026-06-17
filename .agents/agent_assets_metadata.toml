@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "nn_YtvBtIIjnlHhM55ZAQ"
@@ -24,3 +23,9 @@ id = "VD6bnPfX6rLEO34fpsv3M"
 uri = "file://artifacts/menorca-all-star/src/assets/skills.png"
 type = "image"
 title = "skills challenge"
+
+[[outputs]]
+id = "S5w1A3T0f9PQ9vrG9iiU6"
+uri = "file://artifacts/menorca-all-star/dist/menorca-all-star-web.zip"
+type = "unspecified"
+title = "Menorca All Star — Web estática (lista para subir)"
