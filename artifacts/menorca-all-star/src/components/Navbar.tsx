@@ -9,7 +9,7 @@ export function Navbar() {
           <img
             src="/menorca-all-star-logo.png"
             alt="Menorca All Star"
-            className="h-8 w-auto object-contain drop-shadow-[0_0_8px_rgba(226,18,18,0.4)]"
+            className="h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(226,18,18,0.4)]"
           />
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">

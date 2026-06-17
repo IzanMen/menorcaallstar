@@ -33,7 +33,7 @@ export function FooterSection() {
           <img
             src="/menorca-all-star-logo.png"
             alt="Menorca All Star"
-            className="mx-auto w-16 h-16 sm:w-20 sm:h-20 mb-4 object-contain drop-shadow-[0_0_20px_rgba(226,18,18,0.4)]"
+            className="mx-auto w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 mb-6 object-contain drop-shadow-[0_0_30px_rgba(226,18,18,0.45)]"
           />
           <h2
             className="font-black uppercase leading-[0.88] tracking-tight mb-8 text-shadow-glow"
