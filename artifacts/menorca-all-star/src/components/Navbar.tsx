@@ -4,12 +4,12 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 pointer-events-none">
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between pointer-events-auto">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between pointer-events-auto">
         <Link href="/" className="flex items-center">
           <img
             src="/menorca-all-star-logo.png"
             alt="Menorca All Star"
-            className="h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(226,18,18,0.4)]"
+            className="h-20 w-auto object-contain drop-shadow-[0_0_10px_rgba(226,18,18,0.45)]"
           />
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">
