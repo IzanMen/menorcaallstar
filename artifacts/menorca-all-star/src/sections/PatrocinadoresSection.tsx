@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/SectionHeader';
 import logoTenimpla from '@assets/logo_tenimpla_1780928308572.png';
-import logoIX from '@assets/IX_(6)_1780928358951.png';
+import logoIX from '@/assets/ix-logo.png';
 
 const SPONSORS = [
-  { name: 'Tenimpla', logo: logoTenimpla, imgClass: 'max-h-full max-w-full object-contain', cardClass: 'w-52 sm:w-64 h-32 px-6 py-4' },
-  { name: 'IX', logo: logoIX, imgClass: 'max-h-full max-w-full object-contain scale-[2.8]', cardClass: 'w-64 sm:w-80 h-40 px-10 py-6' },
+  { name: 'Tenimpla', logo: logoTenimpla, imgClass: 'max-h-full max-w-full object-contain' },
+  { name: 'IX', logo: logoIX, imgClass: 'max-h-full max-w-full object-contain' },
 ];
 
 export function PatrocinadoresSection() {
@@ -22,7 +22,7 @@ export function PatrocinadoresSection() {
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.25 }}
             whileHover={{ scale: 1.04 }}
-            className={`flex items-center justify-center rounded-2xl bg-white border border-white/10 overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.04)] hover:shadow-[0_0_50px_rgba(226,18,18,0.15)] transition-shadow duration-500 ${sponsor.cardClass}`}
+            className="flex items-center justify-center w-52 sm:w-64 h-32 rounded-2xl bg-white border border-white/10 px-6 py-4 overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.04)] hover:shadow-[0_0_50px_rgba(226,18,18,0.15)] transition-shadow duration-500"
           >
             <img
               src={sponsor.logo}
