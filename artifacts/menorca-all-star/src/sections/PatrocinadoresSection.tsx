@@ -5,7 +5,7 @@ import logoIX from '@assets/IX_(6)_1780928358951.png';
 
 const SPONSORS = [
   { name: 'Tenimpla', logo: logoTenimpla, imgClass: 'max-h-full max-w-full object-contain' },
-  { name: 'IX', logo: logoIX, imgClass: 'max-h-full max-w-full object-contain scale-[2.2]' },
+  { name: 'IX', logo: logoIX, imgClass: 'max-h-full max-w-full object-contain scale-[2.8]' },
 ];
 
 export function PatrocinadoresSection() {

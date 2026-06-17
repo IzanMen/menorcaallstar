@@ -36,14 +36,6 @@ export function HeroSection() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="w-full"
         >
-          <motion.img
-            src="/menorca-all-star-logo.png"
-            alt="Menorca All Star"
-            className="mx-auto w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 mb-4 md:mb-6 object-contain drop-shadow-[0_0_30px_rgba(226,18,18,0.45)]"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          />
           <h1
             className="font-black text-shadow-glow leading-[0.88] mb-3 md:mb-6 w-full"
             style={{ fontSize: 'clamp(4rem, 22vw, 12rem)', letterSpacing: '-0.01em' }}

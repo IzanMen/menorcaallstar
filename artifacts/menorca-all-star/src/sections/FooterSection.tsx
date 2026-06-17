@@ -30,6 +30,11 @@ export function FooterSection() {
             Menorca · Agosto 2026
           </p>
 
+          <img
+            src="/menorca-all-star-logo.png"
+            alt="Menorca All Star"
+            className="mx-auto w-16 h-16 sm:w-20 sm:h-20 mb-4 object-contain drop-shadow-[0_0_20px_rgba(226,18,18,0.4)]"
+          />
           <h2
             className="font-black uppercase leading-[0.88] tracking-tight mb-8 text-shadow-glow"
             style={{ fontSize: 'clamp(3.5rem, 18vw, 9rem)' }}
