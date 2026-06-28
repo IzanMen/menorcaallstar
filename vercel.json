@@ -1,6 +1,6 @@
 {
   "buildCommand": "pnpm build",
-  "outputDirectory": "artifacts/menorca-all-star/dist/public",
+  "outputDirectory": "dist/public",
   "rewrites": [
     {
       "source": "/(.*)",
