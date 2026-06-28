@@ -19,50 +19,73 @@ const RULES: Record<string, {
       {
         label: 'Presentaci\u00f3n',
         items: [
-          'Prepara tu equipo y ven a vivir una jornada el 29 de agosto llena de puro baloncesto, competici\u00f3n y el mejor ambiente del verano. \u00a1Espect\u00e1culo garantizado!',
+          'Prepara tu equipo y ven a vivir una jornada de puro baloncesto, competici\u00f3n y el mejor ambiente del verano. El Menorca All Star 3x3 est\u00e1 dise\u00f1ado para ofrecer partidos r\u00e1pidos, emocionantes y llenos de intensidad desde el primer minuto.',
         ],
       },
       {
         label: 'Categor\u00edas y Composici\u00f3n del Equipo',
         items: [
           { bold: 'Categor\u00edas disponibles:', sub: ['Mini', 'Infantil', 'Cadete', 'J\u00fanior + Adulto'] },
-          { bold: 'Formato del equipo:', sub: ['Equipos cerrados de 5 jugadores exactos', '3 en pista y 2 suplentes para garantizar rotaciones, cambios r\u00e1pidos y el m\u00e1ximo ritmo'] },
+          { bold: 'Formato del equipo:', sub: ['Equipos de 5 jugadores exactos', '3 jugadores en pista y 2 suplentes', 'Cambios libres durante el partido para mantener el m\u00e1ximo ritmo de juego'] },
         ],
       },
       {
         label: 'Din\u00e1mica y Puntuaci\u00f3n',
         items: [
-          { bold: 'Partidos:', sub: ['7 minutos de juego a tiempo corregido (la Gran Final ser\u00e1 de 10 minutos)', 'Sin l\u00edmite de puntos'] },
-          { bold: 'Valores de los tiros:', sub: ['Canastas dentro de la l\u00ednea: 1 punto', 'Lanzamientos desde m\u00e1s all\u00e1 de la l\u00ednea de triple: 2 puntos'] },
-          { bold: 'Emoci\u00f3n hasta el final:', sub: ['En caso de empate, el ganador se decidir\u00e1 en tiros libres en una ronda de muerte s\u00fabita'] },
+          { bold: 'Sistema de juego:', sub: ['Los partidos se disputan en media pista y una sola canasta, siguiendo el formato cl\u00e1sico de 3x3'] },
+          { bold: 'Duraci\u00f3n:', sub: ['7 minutos a tiempo corrido', 'Gran Final: 10 minutos', 'Sin l\u00edmite de puntos'] },
+          { bold: 'Puntuaci\u00f3n:', sub: ['Canasta dentro de la l\u00ednea: 1 punto', 'Canasta desde m\u00e1s all\u00e1 de la l\u00ednea de triple: 2 puntos'] },
+          { bold: 'Desempate:', sub: ['En caso de empate, el ganador se decidir\u00e1 mediante una emocionante tanda de tiros libres en formato de muerte s\u00fabita'] },
         ],
       },
       {
         label: 'Sistema de Competici\u00f3n',
         items: [
-          { bold: 'Fase de Grupos:', sub: ['Primera fase de dos rondas explosivas', 'Si hay empates en la clasificaci\u00f3n, el basket-average decide qui\u00e9n pasa'] },
-          { bold: 'Fase Final:', sub: ['Los mejores equipos se clasifican directamente para las Semifinales y la Gran Final por el t\u00edtulo de campeones'] },
+          { bold: 'Fase de grupos:', sub: ['Cada categor\u00eda contar\u00e1 con un m\u00e1ximo de 8 equipos', 'Los equipos competir\u00e1n por clasificarse para las eliminatorias', 'En caso de empate en la clasificaci\u00f3n, se utilizar\u00e1 la diferencia de puntos (basket-average)'] },
+          { bold: 'Fase final:', sub: ['Semifinales', 'Gran Final', 'Los mejores equipos luchar\u00e1n por proclamarse campeones del Menorca All Star'] },
         ],
       },
       {
         label: 'Precio de Inscripci\u00f3n',
         items: [
-          '5 \u20ac por jugador (25 \u20ac por equipo completo de 5 integrantes)',
-          'Las plazas se otorgar\u00e1n por estricto orden de pago hasta completar el cuadro de competici\u00f3n',
+          '5 \u20ac por jugador',
+          '25 \u20ac por equipo completo',
+          'Las plazas son limitadas y se asignar\u00e1n por estricto orden de inscripci\u00f3n y pago',
+        ],
+      },
+      {
+        label: 'Informaci\u00f3n Importante',
+        items: [
+          'Una vez completada la inscripci\u00f3n, la organizaci\u00f3n enviar\u00e1 por correo electr\u00f3nico toda la normativa detallada, horarios e informaci\u00f3n necesaria para participar en el evento',
         ],
       },
     ],
   },
   'TWOBALL': {
     title: 'TWOBALL',
-    code: 'PROTOCOL\u00b7B2',
+    code: 'PROTOCOL·B2',
     subtitle: 'Shooting Challenge \u00b7 Competici\u00f3n por parejas',
     cta: 'Inscribirse al TwoBall',
     sections: [
       {
         label: 'Presentaci\u00f3n',
         items: [
-          'Pon a prueba tu punter\u00eda y la coordinaci\u00f3n con tu pareja en el concurso de tiro m\u00e1s espectacular del Menorca All Star',
+          'Pon a prueba tu punter\u00eda junto a un compa\u00f1ero en el TwoBall (Shooting Challenge), un concurso de tiro por parejas donde la velocidad, la precisi\u00f3n y la estrategia ser\u00e1n clave para conseguir la m\u00e1xima puntuaci\u00f3n posible.',
+        ],
+      },
+      {
+        label: 'Formato de Competici\u00f3n',
+        items: [
+          { bold: 'Parejas:', sub: ['Parejas de 2 jugadores'] },
+          { bold: 'Din\u00e1mica:', sub: ['Un jugador lanza, recoge su propio rebote y pasa el bal\u00f3n a su compa\u00f1ero, que deber\u00e1 lanzar desde una zona diferente', 'Los jugadores deber\u00e1n alternar obligatoriamente todos los lanzamientos'] },
+          { bold: 'Tiempo:', sub: ['Dispondr\u00e9is de 60 segundos para conseguir el mayor n\u00famero de puntos posible'] },
+        ],
+      },
+      {
+        label: 'Zonas de Puntuaci\u00f3n',
+        items: [
+          'Las canastas valen entre 2 y 7 puntos, seg\u00fan la dificultad de la zona de lanzamiento',
+          { bold: 'Bonificaci\u00f3n especial:', sub: ['Si consegu\u00eds anotar al menos una canasta desde todas las zonas, obtendr\u00e9is una bonificaci\u00f3n de 5 puntos'] },
         ],
       },
       {
@@ -70,37 +93,27 @@ const RULES: Record<string, {
         items: ['Mini', 'Infantil + Cadete', 'J\u00fanior + Adulto'],
       },
       {
-        label: 'Formato de Competici\u00f3n',
+        label: 'Fases de la Competici\u00f3n',
         items: [
-          'El TwoBall se disputa por parejas',
-          'Un jugador lanza, recoge su propio rebote y pasa la pelota al compa\u00f1ero, que tendr\u00e1 que tirar desde una zona',
-          'Los lanzamientos se deben alternar obligatoriamente entre los dos miembros de la pareja',
-          'El objetivo es conseguir la m\u00e1xima puntuaci\u00f3n posible antes de que acabe el tiempo',
-        ],
-      },
-      {
-        label: 'Zonas de Puntuaci\u00f3n',
-        items: [
-          { bold: 'Tiro libre:', sub: ['1 punto'] },
-          { bold: 'Bandas laterales:', sub: ['2 puntos'] },
-          { bold: 'Zona intermedia:', sub: ['3 puntos'] },
-          { bold: 'Triple:', sub: ['4 puntos'] },
-          { bold: 'Medio campo:', sub: ['8 puntos'] },
-        ],
-      },
-      {
-        label: 'Sistema de Competici\u00f3n',
-        items: [
-          { bold: 'Fase Clasificatoria:', sub: ['Cada pareja dispondr\u00e1 de 1 minuto para sumar el m\u00e1ximo n\u00famero de puntos posible'] },
+          { bold: 'Ronda clasificatoria:', sub: ['Todas las parejas disputar\u00e1n una primera ronda de 60 segundos'] },
           { bold: 'Repesca Rel\u00e1mpago:', sub: ['Las parejas no clasificadas directamente tendr\u00e1n una segunda oportunidad para acceder a la final'] },
-          { bold: 'Gran Final:', sub: ['Las 3 mejores parejas competir\u00e1n en la pista principal ante todo el p\u00fablico'] },
+          { bold: 'Gran Final:', sub: ['Las tres mejores parejas competir\u00e1n desde cero en una \u00faltima ronda para proclamarse campeonas del TwoBall'] },
         ],
       },
       {
-        label: 'Inscripci\u00f3n',
+        label: 'Reglas Importantes',
         items: [
-          '5 \u20ac por jugador (10 \u20ac por pareja en total)',
-          'Las plazas son limitadas y se asignar\u00e1n por orden de inscripci\u00f3n y pago',
+          'Los dos jugadores deber\u00e1n alternar todos los lanzamientos',
+          'No se puede lanzar dos veces consecutivas desde la misma posici\u00f3n',
+          'Si un jugador pisa una l\u00ednea, el lanzamiento no ser\u00e1 v\u00e1lido y deber\u00e1 repetirse',
+          'Los lanzamientos realizados antes de sonar la bocina ser\u00e1n v\u00e1lidos aunque el bal\u00f3n entre despu\u00e9s',
+          'Cualquier conducta antideportiva podr\u00e1 suponer la eliminaci\u00f3n inmediata de la pareja',
+        ],
+      },
+      {
+        label: 'Informaci\u00f3n Importante',
+        items: [
+          'Una vez realizada la inscripci\u00f3n, enviaremos por correo electr\u00f3nico toda la informaci\u00f3n detallada del concurso, incluyendo el reglamento completo, horarios y funcionamiento de la competici\u00f3n',
         ],
       },
     ],

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/SectionHeader';
-import logoTenimpla from '@assets/logo_tenimpla_1780928308572.png';
+import logoTenimpla from '../assets/logo_tenimpla_1780928308572.png';
 import logoIX from '@/assets/ix-logo.png';
 
 const SPONSORS = [
