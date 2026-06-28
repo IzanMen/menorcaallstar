@@ -34,11 +34,11 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40, filter: 'blur(20px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full"
+          className="w-full max-w-[min(92vw,64rem)] mx-auto"
         >
           <h1
-            className="font-black text-shadow-glow leading-[0.88] mb-3 md:mb-6 w-full"
-            style={{ fontSize: 'clamp(4rem, 22vw, 12rem)', letterSpacing: '-0.01em' }}
+            className="font-black text-shadow-glow leading-[0.9] mb-3 md:mb-6 w-full"
+            style={{ fontSize: 'clamp(3rem, 14vw, 12rem)', letterSpacing: '-0.02em' }}
           >
             MENORCA<br />ALL STAR
           </h1>
@@ -46,7 +46,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.15 }}
-            className="text-lg sm:text-2xl md:text-3xl text-primary font-display tracking-[0.35em] font-bold mb-8 md:mb-10"
+            className="text-base sm:text-xl md:text-3xl text-primary font-display tracking-[0.24em] sm:tracking-[0.3em] md:tracking-[0.35em] font-bold mb-8 md:mb-10"
           >
             El evento que Menorca necesitaba
           </motion.p>
