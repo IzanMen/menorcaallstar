@@ -14,7 +14,7 @@ export default function Resultados() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="relative z-10 w-full max-w-xl glass-panel-heavy p-8 md:p-12 rounded-2xl flex flex-col items-center text-center border-t-primary/30"
+        className="relative z-10 w-full max-w-[calc(100vw-2rem)] sm:max-w-xl glass-panel-heavy p-6 sm:p-8 md:p-12 rounded-xl flex flex-col items-center text-center border-t-primary/30"
       >
         <motion.div
           animate={{
@@ -32,8 +32,8 @@ export default function Resultados() {
           EN DIRECTO
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground font-sans mb-12 max-w-md">
-          Los resultados en directo se mostrarán aquí durante el evento del 29 de agosto. ¡Vuelve ese día para seguir cada prueba en tiempo real!
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-sans mb-10 sm:mb-12 max-w-md">
+          Los resultados en directo se mostrarán aquí durante el evento del 28 de agosto. ¡Vuelve ese día para seguir cada prueba en tiempo real!
         </p>
 
         <GlowButton href="/" variant="secondary" className="w-full justify-center py-4 bg-transparent border-none hover:bg-white/5">

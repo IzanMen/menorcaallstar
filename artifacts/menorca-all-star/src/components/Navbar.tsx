@@ -2,27 +2,27 @@ import { Link } from 'wouter';
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 pointer-events-none">
+    <nav className="fixed top-0 inset-x-0 z-50 pointer-events-none overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between pointer-events-auto">
+      <div className="relative max-w-7xl mx-auto px-2 sm:px-6 h-16 sm:h-24 flex items-center justify-between pointer-events-auto">
         <Link href="/" className="flex items-center">
           <img
             src="/menorca-all-star-logo.png"
             alt="Menorca All Star"
-            className="h-20 w-auto object-contain drop-shadow-[0_0_10px_rgba(226,18,18,0.45)]"
+            className="h-14 sm:h-20 w-auto object-contain drop-shadow-[0_0_10px_rgba(226,18,18,0.45)]"
           />
         </Link>
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex min-w-0 items-center gap-1 sm:gap-3">
           <Link
             href="/inscripcion"
-            className="px-3 sm:px-4 py-1.5 rounded-full text-[0.6rem] sm:text-xs font-bold tracking-widest uppercase text-white/60 hover:text-white border border-transparent hover:border-white/10 transition-all duration-300"
+            className="px-1.5 sm:px-4 py-1.5 rounded-full text-[0.52rem] sm:text-xs font-bold tracking-wide sm:tracking-widest uppercase text-white/60 hover:text-white border border-transparent hover:border-white/10 transition-all duration-300"
             data-testid="link-nav-inscripciones"
           >
             Inscripciones
           </Link>
           <Link
             href="/resultados"
-            className="px-3 sm:px-4 py-1.5 rounded-full text-[0.6rem] sm:text-xs font-bold tracking-widest uppercase text-primary border border-primary/40 hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"
+            className="px-1.5 sm:px-4 py-1.5 rounded-full text-[0.52rem] sm:text-xs font-bold tracking-wide sm:tracking-widest uppercase text-primary border border-primary/40 hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(226,18,18,0.25)] transition-all duration-300"
             data-testid="link-nav-resultados"
           >
             Resultados <span className="hidden sm:inline">en directo</span>

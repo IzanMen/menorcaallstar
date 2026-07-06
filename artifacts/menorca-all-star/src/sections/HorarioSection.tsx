@@ -285,22 +285,21 @@ export function HorarioSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_30%,rgba(226,18,18,0.05),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-4 mb-16">
-        <SectionHeader title="EL HORARIO" subtitle="29 de agosto" />
+        <SectionHeader title="EL HORARIO" subtitle="28 de agosto" />
       </div>
 
       <div className="relative max-w-3xl mx-auto px-6">
-        <div className="absolute left-[1.05rem] sm:left-[1.55rem] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/[0.07] to-transparent" />
-
-        <PeriodHeader title="MAÑANA" />
-
-        <div className="space-y-2">
-          {MORNING.map((block) => renderBlock(block))}
-        </div>
-
-        <PeriodHeader title="TARDE" />
-
-        <div className="space-y-2">
-          {AFTERNOON.map((block) => renderBlock(block))}
+        <div className="relative overflow-hidden rounded-xl border border-primary/20 bg-black/55 px-8 py-16 text-center shadow-[0_0_60px_rgba(226,18,18,0.10)]">
+          <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
+          <p className="text-[0.65rem] text-primary font-black tracking-[0.55em] uppercase mb-5">
+            28 de agosto
+          </p>
+          <h3 className="font-black uppercase leading-none text-white" style={{ fontSize: 'clamp(3rem, 12vw, 7rem)', letterSpacing: '0' }}>
+            Próximamente
+          </h3>
+          <p className="mt-6 text-white/55 font-sans text-base sm:text-lg max-w-xl mx-auto">
+            Estamos preparando el horario completo del Menorca All Star. Muy pronto estarán disponibles los horarios de apertura, pruebas, finales y entrega de premios.
+          </p>
         </div>
       </div>
     </section>

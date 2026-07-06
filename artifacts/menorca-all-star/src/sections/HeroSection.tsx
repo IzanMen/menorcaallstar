@@ -37,8 +37,12 @@ export function HeroSection() {
           className="w-full max-w-[min(92vw,64rem)] mx-auto"
         >
           <h1
-            className="font-black text-shadow-glow leading-[0.9] mb-3 md:mb-6 w-full"
-            style={{ fontSize: 'clamp(3rem, 14vw, 12rem)', letterSpacing: '-0.02em' }}
+            className="font-black leading-[0.9] mb-3 md:mb-6 w-full text-white"
+            style={{
+              fontSize: 'clamp(3rem, 14vw, 12rem)',
+              letterSpacing: '0',
+              textShadow: '0 4px 28px rgba(0,0,0,0.78)',
+            }}
           >
             MENORCA<br />ALL STAR
           </h1>
@@ -46,7 +50,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.15 }}
-            className="text-base sm:text-xl md:text-3xl text-primary font-display tracking-[0.24em] sm:tracking-[0.3em] md:tracking-[0.35em] font-bold mb-8 md:mb-10"
+            className="mx-auto max-w-[22rem] sm:max-w-none text-sm sm:text-xl md:text-3xl text-primary font-display tracking-[0.14em] sm:tracking-[0.3em] md:tracking-[0.35em] font-bold mb-8 md:mb-10"
           >
             El evento que Menorca necesitaba
           </motion.p>
@@ -64,11 +68,13 @@ export function HeroSection() {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-10 z-10 text-primary/50"
+        className="absolute bottom-8 z-10 text-primary"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <ChevronDown className="w-10 h-10" />
+        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/60 bg-black/45 shadow-[0_0_24px_rgba(226,18,18,0.35)]">
+          <ChevronDown className="w-8 h-8" />
+        </div>
       </motion.div>
     </section>
   );

@@ -31,9 +31,9 @@ export function GlowButton({
   };
 
   const variants = {
-    primary: "bg-primary/10 text-primary border border-primary/50 hover:bg-primary/20 hover:border-primary hover:shadow-[0_0_20px_rgba(0,212,255,0.4)]",
-    accent: "bg-accent/10 text-accent border border-accent/50 hover:bg-accent/20 hover:border-accent hover:shadow-[0_0_20px_rgba(255,23,68,0.4)]",
-    secondary: "bg-secondary/10 text-secondary border border-secondary/50 hover:bg-secondary/20 hover:border-secondary hover:shadow-[0_0_20px_rgba(139,92,246,0.4)]",
+    primary: "bg-primary/15 text-primary border border-primary/70 hover:bg-primary/25 hover:border-primary hover:shadow-[0_0_24px_rgba(226,18,18,0.45)]",
+    accent: "bg-accent/10 text-accent border border-accent/50 hover:bg-accent/20 hover:border-accent hover:shadow-[0_0_20px_rgba(245,158,11,0.35)]",
+    secondary: "bg-secondary/10 text-secondary border border-secondary/50 hover:bg-secondary/20 hover:border-secondary hover:shadow-[0_0_20px_rgba(226,18,18,0.35)]",
   };
   
   const disabledStyles = disabled ? "opacity-50 cursor-not-allowed pointer-events-none grayscale" : "";

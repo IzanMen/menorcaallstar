@@ -13,7 +13,7 @@ const RULES: Record<string, {
   '3X3': {
     title: '3X3',
     code: 'PROTOCOL·A1',
-    subtitle: 'Torneo 3x3 \u00b7 29 de agosto',
+    subtitle: 'Torneo 3x3 \u00b7 28 de agosto',
     cta: 'Inscribirse al Torneo 3x3',
     sections: [
       {
@@ -25,7 +25,7 @@ const RULES: Record<string, {
       {
         label: 'Categor\u00edas y Composici\u00f3n del Equipo',
         items: [
-          { bold: 'Categor\u00edas disponibles:', sub: ['Mini', 'Infantil', 'Cadete', 'J\u00fanior + Adulto'] },
+          { bold: 'Categor\u00edas disponibles:', sub: ['Mini: 2015-2014', 'Infantil: 2013-2012', 'Cadete: 2011-2010', 'J\u00fanior: 2009-2008', 'Adulto: 2007 hacia adelante'] },
           { bold: 'Formato del equipo:', sub: ['Equipos de 5 jugadores exactos', '3 jugadores en pista y 2 suplentes', 'Cambios libres durante el partido para mantener el m\u00e1ximo ritmo de juego'] },
         ],
       },
@@ -64,56 +64,56 @@ const RULES: Record<string, {
   'TWOBALL': {
     title: 'TWOBALL',
     code: 'PROTOCOL·B2',
-    subtitle: 'Shooting Challenge \u00b7 Competici\u00f3n por parejas',
+    subtitle: 'Competici\u00f3n por parejas \u00b7 28 de agosto',
     cta: 'Inscribirse al TwoBall',
     sections: [
       {
         label: 'Presentaci\u00f3n',
         items: [
-          'Pon a prueba tu punter\u00eda junto a un compa\u00f1ero en el TwoBall (Shooting Challenge), un concurso de tiro por parejas donde la velocidad, la precisi\u00f3n y la estrategia ser\u00e1n clave para conseguir la m\u00e1xima puntuaci\u00f3n posible.',
+          'Pon a prueba tu punter\u00eda junto a un compa\u00f1ero en el TwoBall, un concurso de tiro por parejas donde la velocidad, la precisi\u00f3n y la estrategia ser\u00e1n clave para conseguir la m\u00e1xima puntuaci\u00f3n posible.',
         ],
       },
       {
         label: 'Formato de Competici\u00f3n',
         items: [
-          { bold: 'Parejas:', sub: ['Parejas de 2 jugadores'] },
-          { bold: 'Din\u00e1mica:', sub: ['Un jugador lanza, recoge su propio rebote y pasa el bal\u00f3n a su compa\u00f1ero, que deber\u00e1 lanzar desde una zona diferente', 'Los jugadores deber\u00e1n alternar obligatoriamente todos los lanzamientos'] },
-          { bold: 'Tiempo:', sub: ['Dispondr\u00e9is de 60 segundos para conseguir el mayor n\u00famero de puntos posible'] },
+          'Parejas de 2 jugadores.',
+          'Un jugador lanza, recoge su propio rebote y pasa el bal\u00f3n a su compa\u00f1ero, que deber\u00e1 lanzar desde una zona diferente. Los jugadores deber\u00e1n alternar obligatoriamente todos los lanzamientos.',
+          'Dispondr\u00e9is de 60 segundos para conseguir el mayor n\u00famero de puntos posible.',
         ],
       },
       {
         label: 'Zonas de Puntuaci\u00f3n',
         items: [
-          'Las canastas valen entre 2 y 7 puntos, seg\u00fan la dificultad de la zona de lanzamiento',
-          { bold: 'Bonificaci\u00f3n especial:', sub: ['Si consegu\u00eds anotar al menos una canasta desde todas las zonas, obtendr\u00e9is una bonificaci\u00f3n de 5 puntos'] },
+          'Las canastas valen entre 2 y 7 puntos, seg\u00fan la dificultad de la zona de lanzamiento.',
+          'Si consegu\u00eds anotar al menos una canasta desde todas las zonas, obtendr\u00e9is una bonificaci\u00f3n de 5 puntos.',
         ],
       },
       {
         label: 'Categor\u00edas',
-        items: ['Mini', 'Infantil + Cadete', 'J\u00fanior + Adulto'],
+        items: ['Mini: 2015-2014', 'Infantil + Cadete: 2013-2010', 'J\u00fanior + Adulto: 2009 hacia adelante'],
       },
       {
         label: 'Fases de la Competici\u00f3n',
         items: [
-          { bold: 'Ronda clasificatoria:', sub: ['Todas las parejas disputar\u00e1n una primera ronda de 60 segundos'] },
-          { bold: 'Repesca Rel\u00e1mpago:', sub: ['Las parejas no clasificadas directamente tendr\u00e1n una segunda oportunidad para acceder a la final'] },
-          { bold: 'Gran Final:', sub: ['Las tres mejores parejas competir\u00e1n desde cero en una \u00faltima ronda para proclamarse campeonas del TwoBall'] },
+          { bold: 'Ronda clasificatoria:', sub: ['Todas las parejas disputar\u00e1n una primera ronda de 60 segundos.'] },
+          { bold: 'Repesca Rel\u00e1mpago:', sub: ['Todas las parejas excepto la directamente clasificada, que es la que tiene m\u00e1s puntos, tendr\u00e1n una segunda oportunidad para acceder a la final. Pasar\u00e1n las 2 mejores de esa ronda.'] },
+          { bold: 'Gran Final:', sub: ['Las tres mejores parejas competir\u00e1n desde cero en una \u00faltima ronda para proclamarse campeonas del TwoBall.'] },
         ],
       },
       {
         label: 'Reglas Importantes',
         items: [
-          'Los dos jugadores deber\u00e1n alternar todos los lanzamientos',
-          'No se puede lanzar dos veces consecutivas desde la misma posici\u00f3n',
-          'Si un jugador pisa una l\u00ednea, el lanzamiento no ser\u00e1 v\u00e1lido y deber\u00e1 repetirse',
-          'Los lanzamientos realizados antes de sonar la bocina ser\u00e1n v\u00e1lidos aunque el bal\u00f3n entre despu\u00e9s',
-          'Cualquier conducta antideportiva podr\u00e1 suponer la eliminaci\u00f3n inmediata de la pareja',
+          'Los dos jugadores deber\u00e1n alternar todos los lanzamientos.',
+          'No se puede lanzar dos veces consecutivas desde la misma posici\u00f3n.',
+          'Si un jugador pisa una l\u00ednea, el lanzamiento no ser\u00e1 v\u00e1lido y deber\u00e1 repetirse.',
+          'Los lanzamientos realizados antes de sonar la bocina ser\u00e1n v\u00e1lidos aunque el bal\u00f3n entre despu\u00e9s.',
+          'Cualquier conducta antideportiva podr\u00e1 suponer la eliminaci\u00f3n inmediata de la pareja.',
         ],
       },
       {
         label: 'Informaci\u00f3n Importante',
         items: [
-          'Una vez realizada la inscripci\u00f3n, enviaremos por correo electr\u00f3nico toda la informaci\u00f3n detallada del concurso, incluyendo el reglamento completo, horarios y funcionamiento de la competici\u00f3n',
+          'Una vez realizada la inscripci\u00f3n, enviaremos por correo electr\u00f3nico toda la informaci\u00f3n detallada del concurso, incluyendo el reglamento completo, horarios y funcionamiento de la competici\u00f3n.',
         ],
       },
     ],
