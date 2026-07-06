@@ -1,10 +1,29 @@
 import { GlowButton } from '@/components/GlowButton';
+import img3x3 from '@/assets/3x3.webp';
+import imgTwoball from '@/assets/twoball.webp';
 import { motion } from 'framer-motion';
-import { Lock } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+
+const INSCRIPCIONES = [
+  {
+    title: '3X3',
+    label: 'Inscribirse al 3x3',
+    href: 'https://www.tenimpla.com/events/4600/inscripcion',
+    image: img3x3,
+    variant: 'primary' as const,
+  },
+  {
+    title: 'TWOBALL',
+    label: 'Inscribirse al TwoBall',
+    href: 'https://www.tenimpla.com/events/4601/inscripcion',
+    image: imgTwoball,
+    variant: 'secondary' as const,
+  },
+];
 
 export default function Inscripcion() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4 relative overflow-hidden text-foreground selection:bg-primary/30 selection:text-white">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 py-28 relative overflow-hidden text-foreground selection:bg-primary/30 selection:text-white">
       {/* Cinematic background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,212,255,0.1),transparent_50%)]" />
@@ -18,33 +37,59 @@ export default function Inscripcion() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 w-full max-w-xl glass-panel-heavy p-8 md:p-12 rounded-2xl flex flex-col items-center text-center border-t-primary/30"
+        className="relative z-10 w-full max-w-5xl flex flex-col items-center text-center"
       >
-        <motion.div
-          animate={{ 
-            boxShadow: ['0 0 20px rgba(0,212,255,0.2)', '0 0 40px rgba(0,212,255,0.4)', '0 0 20px rgba(0,212,255,0.2)']
-          }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-8 border border-primary/30"
-        >
-          <Lock className="w-10 h-10 text-primary" />
-        </motion.div>
-
-        <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-wide uppercase text-shadow-glow">
+        <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-wide uppercase text-shadow-glow">
           INSCRIPCIONES
-          <br />
-          PRÓXIMAMENTE
         </h1>
         
-        <p className="text-lg md:text-xl text-muted-foreground font-sans mb-12 max-w-md">
-          El portal de registro aún no está abierto. Mantente atento a nuestras redes sociales para la fecha de apertura.
+        <p className="text-lg md:text-xl text-muted-foreground font-sans mb-10 max-w-2xl">
+          Elige tu prueba y completa la inscripción oficial en Tenimpla.
         </p>
 
-        <div className="w-full flex flex-col gap-4">
-          <GlowButton disabled className="w-full justify-center py-4">
-            INSCRIBIRME
-          </GlowButton>
-          
+        <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
+          {INSCRIPCIONES.map((inscripcion, index) => (
+            <motion.article
+              key={inscripcion.title}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, delay: index * 0.08, ease: 'easeOut' }}
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="group relative min-h-[22rem] overflow-hidden rounded-xl glass-panel text-left"
+            >
+              <img
+                src={inscripcion.image}
+                alt={inscripcion.title}
+                className="absolute inset-0 h-full w-full object-cover opacity-45 transition-all duration-700 ease-out group-hover:scale-110 group-hover:opacity-65"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
+
+              <div className="relative z-10 flex h-full min-h-[22rem] flex-col justify-end p-6 sm:p-8">
+                <div className="mb-6 flex items-center justify-between gap-4">
+                  <h2 className="text-5xl md:text-6xl font-black tracking-wide text-white">
+                    {inscripcion.title}
+                  </h2>
+                  <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-primary transition-colors duration-300 group-hover:border-primary/70 group-hover:bg-primary/15">
+                    <ArrowUpRight className="h-6 w-6" />
+                  </span>
+                </div>
+
+                <GlowButton
+                  href={inscripcion.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  variant={inscripcion.variant}
+                  size="md"
+                  className="w-full py-4 text-sm sm:text-base"
+                >
+                  {inscripcion.label}
+                </GlowButton>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="mt-8 w-full max-w-md">
           <GlowButton href="/" variant="secondary" className="w-full justify-center py-4 bg-transparent border-none hover:bg-white/5">
             VOLVER AL INICIO
           </GlowButton>

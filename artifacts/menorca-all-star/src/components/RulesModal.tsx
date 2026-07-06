@@ -8,6 +8,7 @@ const RULES: Record<string, {
   code: string;
   subtitle: string;
   cta: string;
+  href: string;
   sections: { label: string; items: (string | { bold: string; sub?: string[] })[] }[];
 }> = {
   '3X3': {
@@ -15,6 +16,7 @@ const RULES: Record<string, {
     code: 'PROTOCOL·A1',
     subtitle: 'Torneo 3x3 \u00b7 28 de agosto',
     cta: 'Inscribirse al Torneo 3x3',
+    href: 'https://www.tenimpla.com/events/4600/inscripcion',
     sections: [
       {
         label: 'Presentaci\u00f3n',
@@ -66,6 +68,7 @@ const RULES: Record<string, {
     code: 'PROTOCOL·B2',
     subtitle: 'Competici\u00f3n por parejas \u00b7 28 de agosto',
     cta: 'Inscribirse al TwoBall',
+    href: 'https://www.tenimpla.com/events/4601/inscripcion',
     sections: [
       {
         label: 'Presentaci\u00f3n',
@@ -307,7 +310,14 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
                     </div>
                   ))}
                   <div className="pt-2">
-                    <GlowButton href="/inscripcion" size="md" className="w-full" data-testid={`btn-inscripcion-${data.title.toLowerCase()}`}>
+                    <GlowButton
+                      href={data.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      size="md"
+                      className="w-full"
+                      data-testid={`btn-inscripcion-${data.title.toLowerCase()}`}
+                    >
                       {data.cta}
                     </GlowButton>
                   </div>

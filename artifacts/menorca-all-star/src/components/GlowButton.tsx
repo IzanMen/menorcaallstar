@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 
 interface GlowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
+  target?: string;
+  rel?: string;
   variant?: 'primary' | 'accent' | 'secondary';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
@@ -14,6 +16,8 @@ interface GlowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function GlowButton({ 
   href, 
+  target,
+  rel,
   variant = 'primary', 
   size = 'md', 
   className, 
@@ -50,6 +54,24 @@ export function GlowButton({
   );
 
   if (href) {
+    const isExternal = /^https?:\/\//.test(href);
+
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          target={target}
+          rel={rel ?? (target === '_blank' ? 'noreferrer' : undefined)}
+          className={disabled ? "pointer-events-none" : ""}
+          data-testid={`link-${href.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`}
+        >
+          <span className={cn("inline-block", disabledStyles)}>
+            {content}
+          </span>
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={disabled ? "pointer-events-none" : ""}>
         <span className={cn("inline-block", disabledStyles)} data-testid={`link-${href.replace('/', '')}`}>
