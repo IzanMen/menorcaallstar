@@ -2,7 +2,6 @@ import { GlowButton } from '@/components/GlowButton';
 import img3x3 from '@/assets/3x3.webp';
 import imgTwoball from '@/assets/twoball.webp';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
 
 const INSCRIPCIONES = [
   {
@@ -49,13 +48,17 @@ export default function Inscripcion() {
 
         <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
           {INSCRIPCIONES.map((inscripcion, index) => (
-            <motion.article
+            <motion.a
               key={inscripcion.title}
+              href={inscripcion.href}
+              target="_blank"
+              rel="noreferrer"
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, delay: index * 0.08, ease: 'easeOut' }}
               whileHover={{ y: -6, scale: 1.01 }}
-              className="group relative min-h-[22rem] overflow-hidden rounded-xl glass-panel text-left"
+              whileTap={{ scale: 0.98 }}
+              className="group relative min-h-[22rem] overflow-hidden rounded-xl glass-panel text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/80"
             >
               <img
                 src={inscripcion.image}
@@ -65,27 +68,21 @@ export default function Inscripcion() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
 
               <div className="relative z-10 flex h-full min-h-[22rem] flex-col justify-end p-6 sm:p-8">
-                <div className="mb-6 flex items-center justify-between gap-4">
-                  <h2 className="text-5xl md:text-6xl font-black tracking-wide text-white">
-                    {inscripcion.title}
-                  </h2>
-                  <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-primary transition-colors duration-300 group-hover:border-primary/70 group-hover:bg-primary/15">
-                    <ArrowUpRight className="h-6 w-6" />
-                  </span>
-                </div>
+                <h2 className="mb-6 text-5xl md:text-6xl font-black tracking-wide text-white">
+                  {inscripcion.title}
+                </h2>
 
-                <GlowButton
-                  href={inscripcion.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant={inscripcion.variant}
-                  size="md"
-                  className="w-full py-4 text-sm sm:text-base"
-                >
-                  {inscripcion.label}
-                </GlowButton>
+                <div className="pointer-events-none">
+                  <GlowButton
+                    variant={inscripcion.variant}
+                    size="md"
+                    className="w-full py-4 text-sm sm:text-base"
+                  >
+                    {inscripcion.label}
+                  </GlowButton>
+                </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
 
