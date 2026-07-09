@@ -28,7 +28,7 @@ const RULES: Record<string, {
         label: 'Categor\u00edas y Composici\u00f3n del Equipo',
         items: [
           { bold: 'Categor\u00edas disponibles:', sub: ['Mini: 2015-2014', 'Infantil: 2013-2012', 'Cadete: 2011-2010', 'J\u00fanior: 2009-2008', 'Adulto: 2007 hacia adelante'] },
-          { bold: 'Formato del equipo:', sub: ['Equipos de 5 jugadores exactos', '3 jugadores en pista y 2 suplentes', 'Cambios libres durante el partido para mantener el m\u00e1ximo ritmo de juego'] },
+          { bold: 'Formato del equipo:', sub: ['Equipos de 3 a 5 jugadores', '3 jugadores en pista', 'Cambios libres durante el partido para mantener el m\u00e1ximo ritmo de juego'] },
         ],
       },
       {
@@ -50,7 +50,6 @@ const RULES: Record<string, {
       {
         label: 'Precio de Inscripci\u00f3n',
         items: [
-          '5 \u20ac por jugador',
           '25 \u20ac por equipo completo',
           'Las plazas son limitadas y se asignar\u00e1n por estricto orden de inscripci\u00f3n y pago',
         ],
