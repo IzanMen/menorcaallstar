@@ -2,6 +2,7 @@ import { useEffect, useRef, type CSSProperties } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { X } from 'lucide-react';
 import { GlowButton } from './GlowButton';
+import twoballScoreMap from '@/assets/twoball-puntuacion.jpeg';
 
 const RULES: Record<string, {
   title: string;
@@ -9,6 +10,9 @@ const RULES: Record<string, {
   subtitle: string;
   cta: string;
   href: string;
+  image?: string;
+  imageAlt?: string;
+  imageAfter?: string;
   sections: { label: string; items: (string | { bold: string; sub?: string[] })[] }[];
 }> = {
   '3X3': {
@@ -68,6 +72,9 @@ const RULES: Record<string, {
     subtitle: 'Competici\u00f3n por parejas \u00b7 28 de agosto',
     cta: 'Inscribirse al TwoBall',
     href: 'https://www.tenimpla.com/events/4601/inscripcion',
+    image: twoballScoreMap,
+    imageAlt: 'Mapa de puntuaci\u00f3n del concurso TwoBall',
+    imageAfter: 'Zonas de Puntuaci\u00f3n',
     sections: [
       {
         label: 'Presentaci\u00f3n',
@@ -306,6 +313,17 @@ export function RulesModal({ prueba, onClose }: RulesModalProps) {
                           )
                         )}
                       </ul>
+                      {data.image && data.imageAfter === section.label && (
+                        <div className="mt-4 overflow-hidden rounded-lg border border-primary/20 bg-black/40 shadow-[0_0_30px_rgba(226,18,18,0.12)]">
+                          <img
+                            src={data.image}
+                            alt={data.imageAlt ?? ''}
+                            loading="lazy"
+                            decoding="async"
+                            className="block w-full object-contain"
+                          />
+                        </div>
+                      )}
                     </div>
                   ))}
                   <div className="pt-2">
