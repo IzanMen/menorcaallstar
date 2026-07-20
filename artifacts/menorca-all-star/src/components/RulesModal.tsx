@@ -62,6 +62,8 @@ const RULES: Record<string, {
         label: 'Informaci\u00f3n Importante',
         items: [
           'Una vez completada la inscripci\u00f3n, la organizaci\u00f3n enviar\u00e1 por correo electr\u00f3nico toda la normativa detallada, horarios e informaci\u00f3n necesaria para participar en el evento',
+          'Los equipos podr\u00e1n utilizar su propia equipaci\u00f3n. Si no fuera suficiente para diferenciar a ambos equipos, la organizaci\u00f3n facilitar\u00e1 petos antes del inicio del partido',
+
         ],
       },
     ],
