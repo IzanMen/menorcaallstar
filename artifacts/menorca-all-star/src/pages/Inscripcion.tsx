@@ -2,6 +2,7 @@ import { GlowButton } from '@/components/GlowButton';
 import img3x3 from '@/assets/3x3.webp';
 import imgTwoball from '@/assets/twoball.webp';
 import { motion } from 'framer-motion';
+import { AlertTriangle, Clock3 } from 'lucide-react';
 
 const INSCRIPCIONES = [
   {
@@ -42,9 +43,40 @@ export default function Inscripcion() {
           INSCRIPCIONES
         </h1>
         
-        <p className="text-lg md:text-xl text-muted-foreground font-sans mb-10 max-w-2xl">
+        <p className="text-lg md:text-xl text-muted-foreground font-sans mb-6 max-w-2xl">
           Elige tu prueba y completa la inscripción oficial en Tenimpla.
         </p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.12, ease: 'easeOut' }}
+          className="mb-10 w-full overflow-hidden rounded-lg border border-primary/35 bg-black/55 text-left shadow-[0_0_45px_rgba(226,18,18,0.16)]"
+          data-testid="price-urgency-notice"
+        >
+          <div className="h-1 bg-gradient-to-r from-accent via-primary to-accent" />
+          <div className="grid gap-4 p-5 sm:grid-cols-[auto_1fr] sm:items-center sm:p-6">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-accent/35 bg-accent/10 text-accent">
+              <Clock3 className="h-6 w-6" aria-hidden="true" />
+            </div>
+
+            <div>
+              <div className="mb-2 flex flex-wrap items-center gap-2 text-primary">
+                <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+                <p className="text-[0.68rem] font-black uppercase tracking-[0.28em]">
+                  Subida de precio el 26 de julio
+                </p>
+              </div>
+              <h2 className="mb-2 text-2xl font-black uppercase leading-none text-white sm:text-4xl">
+                Últimas horas para asegurar el precio actual
+              </h2>
+              <p className="text-sm leading-relaxed text-white/68 sm:text-base">
+                Inscríbete ahora antes de que suban las inscripciones. Las plazas son limitadas
+                y se asignan por estricto orden de inscripción y pago.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
         <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
           {INSCRIPCIONES.map((inscripcion, index) => (

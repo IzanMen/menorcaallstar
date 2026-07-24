@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Switch, Route, Router as WouterRouter } from 'wouter';
 import Home from '@/pages/Home';
 import { Navbar } from '@/components/Navbar';
+import { PriceUrgencyPopup } from '@/components/PriceUrgencyPopup';
 
 const Inscripcion = lazy(() => import('@/pages/Inscripcion'));
 const Resultados = lazy(() => import('@/pages/Resultados'));
@@ -11,6 +12,7 @@ export default function App() {
   return (
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <Navbar />
+      <PriceUrgencyPopup />
       <Suspense fallback={null}>
         <Switch>
           <Route path="/" component={Home} />
