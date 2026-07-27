@@ -110,7 +110,7 @@ export function PriceUrgencyPopup() {
               <div className="mb-5 flex items-center gap-3 text-primary">
                 <AlertTriangle className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
                 <p className="text-xs font-black uppercase tracking-[0.32em] text-primary/80">
-                  Subida de precio el 26 de julio
+                  Cambio de condiciones el 16 de agosto
                 </p>
               </div>
 
@@ -118,12 +118,13 @@ export function PriceUrgencyPopup() {
                 id="price-urgency-title"
                 className="mb-4 text-4xl font-black uppercase leading-[0.9] text-white sm:text-6xl"
               >
-                Apúntate antes de que suban las inscripciones
+                Apúntate antes de que cambien las inscripciones
               </h2>
 
               <p className="mb-6 text-base leading-relaxed text-white/74 sm:text-lg">
-                El precio actual se acaba ya. Si quieres asegurar tu plaza en Menorca All Star,
-                inscríbete ahora: las plazas van por orden de inscripción y pago.
+                Las inscripciones están a punto de cambiar. Si quieres asegurar tu plaza en
+                Menorca All Star, inscríbete ahora: las plazas van por orden de inscripción y
+                pago.
               </p>
 
               <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
@@ -143,7 +144,7 @@ export function PriceUrgencyPopup() {
                   className="inline-flex min-h-12 items-center justify-center border border-white/12 px-5 py-3 font-display text-sm font-black uppercase tracking-widest text-white/65 transition-all duration-300 hover:border-accent/45 hover:text-accent"
                   data-testid="link-popup-precios"
                 >
-                  Ver precios
+                  Ver inscripción
                 </Link>
               </div>
             </div>

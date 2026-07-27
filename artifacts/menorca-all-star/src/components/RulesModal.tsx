@@ -52,11 +52,14 @@ const RULES: Record<string, {
         ],
       },
       {
-        label: 'Precio de Inscripci\u00f3n',
+        label: 'Inscripci\u00f3n',
         items: [
-          '25 \u20ac por equipo completo',
           'Las plazas son limitadas y se asignar\u00e1n por estricto orden de inscripci\u00f3n y pago',
         ],
+      },
+      {
+        label: 'Premios',
+        items: ['100 \u20ac m\u00ednimo al equipo ganador de cada categor\u00eda'],
       },
       {
         label: 'Informaci\u00f3n Importante',
@@ -120,6 +123,10 @@ const RULES: Record<string, {
           'Los lanzamientos realizados antes de sonar la bocina ser\u00e1n v\u00e1lidos aunque el bal\u00f3n entre despu\u00e9s.',
           'Cualquier conducta antideportiva podr\u00e1 suponer la eliminaci\u00f3n inmediata de la pareja.',
         ],
+      },
+      {
+        label: 'Premios',
+        items: ['80 \u20ac m\u00ednimo al equipo ganador de cada categor\u00eda'],
       },
       {
         label: 'Informaci\u00f3n Importante',

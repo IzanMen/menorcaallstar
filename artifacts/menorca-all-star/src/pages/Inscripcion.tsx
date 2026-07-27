@@ -64,15 +64,15 @@ export default function Inscripcion() {
               <div className="mb-2 flex flex-wrap items-center gap-2 text-primary">
                 <AlertTriangle className="h-4 w-4" aria-hidden="true" />
                 <p className="text-[0.68rem] font-black uppercase tracking-[0.28em]">
-                  Subida de precio el 26 de julio
+                  Cambio de condiciones el 16 de agosto
                 </p>
               </div>
               <h2 className="mb-2 text-2xl font-black uppercase leading-none text-white sm:text-4xl">
-                Últimas horas para asegurar el precio actual
+                Últimas horas para asegurar tu inscripción
               </h2>
               <p className="text-sm leading-relaxed text-white/68 sm:text-base">
-                Inscríbete ahora antes de que suban las inscripciones. Las plazas son limitadas
-                y se asignan por estricto orden de inscripción y pago.
+                Inscríbete ahora antes de que cambien las condiciones. Las plazas son limitadas y
+                se asignan por estricto orden de inscripción y pago.
               </p>
             </div>
           </div>
